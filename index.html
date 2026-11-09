@@ -453,256 +453,92 @@
             cursor: pointer;
             font-size: 16px;
         }
-        .cart-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.5);
-            z-index: 200;
-            display: none;
-        }
-        .cart-drawer {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 100%;
-            max-width: 400px;
-            height: 100%;
-            background: var(--white);
-            z-index: 201;
-            box-shadow: -5px 0 25px rgba(0,0,0,0.15);
-            transition: right 0.3s ease;
-            display: flex;
-            flex-direction: column;
-        }
-        .cart-drawer.open {
-            right: 0;
-        }
-        .cart-header {
-            padding: 20px;
-            border-bottom: 1px solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .cart-header h3 {
-            font-size: 18px;
-        }
-        .close-cart {
-            background: none;
-            border: none;
-            font-size: 22px;
-            cursor: pointer;
-        }
-        .cart-items {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 20px;
-        }
-        .cart-item {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
-            border-bottom: 1px solid var(--border-color);
-            align-items: center;
-        }
-        .cart-item img {
-            width: 60px;
-            height: 70px;
-            object-fit: cover;
-            border-radius: 4px;
-        }
-        .cart-item-details {
-            flex-grow: 1;
-        }
-        .cart-item-title {
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 4px;
-        }
-        .cart-item-price {
-            font-size: 13px;
-            font-weight: 700;
-            color: var(--gold);
-        }
-        .remove-item {
-            background: none;
-            border: none;
-            color: #999;
-            cursor: pointer;
-            font-size: 16px;
-        }
-        .cart-footer {
-            padding: 20px;
-            border-top: 1px solid var(--border-color);
-            background: var(--light-grey);
-        }
-        .coupon-row {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-        .coupon-row input {
-            flex-grow: 1;
-            padding: 8px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 13px;
-        }
-        .coupon-row button {
-            background: var(--black);
-            color: var(--white);
-            border: none;
-            padding: 8px 15px;
-            border-radius: 4px;
-            font-weight: 600;
-            font-size: 13px;
-            cursor: pointer;
-        }
-        .cart-summary-line {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 8px;
-            font-size: 14px;
-        }
-        .cart-summary-line.total {
-            font-weight: 700;
-            font-size: 16px;
-            border-top: 1px solid var(--border-color);
-            padding-top: 8px;
-            margin-top: 8px;
-        }
-        .cart-shipping-note {
-            font-size: 12px;
-            color: #555;
-            margin-bottom: 15px;
-            background: #fff;
-            padding: 8px;
-            border-radius: 4px;
-            border: 1px solid var(--border-color);
-        }
-        .cart-checkout-btns {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-        .btn-checkout {
-            background: var(--gold-btn);
-            color: var(--black);
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            font-size: 14px;
-        }
-        .btn-wa-checkout {
-            background: var(--whatsapp);
-            color: var(--white);
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            font-weight: 700;
-            text-align: center;
-            cursor: pointer;
-            font-size: 14px;
-            text-decoration: none;
-        }
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 300;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        .modal-content {
-            background: var(--white);
-            width: 100%;
-            max-width: 550px;
-            border-radius: 8px;
-            padding: 30px;
-            position: relative;
-            max-height: 90vh;
-            overflow-y: auto;
-        }
-        .modal-close {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 24px;
-            cursor: pointer;
-        }
-        .modal h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 5px;
-        }
-        .form-control {
-            width: 100%;
-            padding: 10px 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            font-size: 14px;
-        }
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-        .payment-options {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-        .payment-option {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 12px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 600;
-        }
-        .ai-chat-btn {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--black);
-            color: var(--white);
-            border: 2px solid var(--gold);
-            padding: 12px 20px;
-            border-radius: 30px;
-            font-weight: 700;
-            cursor: pointer;
-            z-index: 150;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-        }
-        .chat-box {
-          
+    </style>
+</head>
+<body>
+
+    <div class="announcement-bar">
+        ✨ International Express Shipping to USA, UK & Dubai • Free Shipping on Orders Over $75 / £60 / AED 300 • Use Code: WELCOME10 for 10% Off ✨
+    </div>
+
+    <header>
+        <div class="logo" onclick="showPage('home')">LUXE<span>BOUTIQUE</span></div>
+        <ul class="nav-links">
+            <li><a onclick="showPage('home')" id="nav-home" class="active">Home</a></li>
+            <li><a onclick="showPage('shop')" id="nav-shop">Shop</a></li>
+            <li><a onclick="showPage('about')" id="nav-about">About</a></li>
+            <li><a onclick="showPage('reviews')" id="nav-reviews">Reviews</a></li>
+            <li><a onclick="showPage('contact')" id="nav-contact">Contact</a></li>
+        </ul>
+        <div class="header-actions">
+            <div class="search-box">
+                <input type="text" id="headerSearchInput" placeholder="Search luxury..." oninput="syncSearch(this.value)">
+                <button onclick="doSearch()">Search</button>
+            </div>
+            <select class="currency-select" id="currencySelect" onchange="changeCurrency(this.value)">
+                <option value="USD">USD ($)</option>
+                <option value="GBP">GBP (£)</option>
+                <option value="AED">AED (د.إ)</option>
+            </select>
+            <button class="cart-btn" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button>
+            <button class="menu-toggle" onclick="toggleMobileMenu()">☰</button>
+        </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu" style="position:fixed; top:0; left:-100%; width:280px; height:100%; background:var(--white); z-index:250; box-shadow:5px 0 25px rgba(0,0,0,0.1); transition:left 0.3s ease; padding:30px 20px; display:flex; flex-direction:column; gap:20px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <div class="logo" onclick="toggleMobileMenu(); showPage('home');">LUXE<span>BOUTIQUE</span></div>
+            <button onclick="toggleMobileMenu()" style="background:none;border:none;font-size:22px;cursor:pointer;">✕</button>
+        </div>
+        <a onclick="toggleMobileMenu(); showPage('home');" style="font-size:16px; font-weight:700; text-decoration:none; color:var(--black); cursor:pointer;">Home</a>
+        <a onclick="toggleMobileMenu(); showPage('shop');" style="font-size:16px; font-weight:700; text-decoration:none; color:var(--black); cursor:pointer;">Shop All Products</a>
+        <a onclick="toggleMobileMenu(); showPage('about');" style="font-size:16px; font-weight:700; text-decoration:none; color:var(--black); cursor:pointer;">About Us</a>
+        <a onclick="toggleMobileMenu(); showPage('reviews');" style="font-size:16px; font-weight:700; text-decoration:none; color:var(--black); cursor:pointer;">Customer Reviews</a>
+        <a onclick="toggleMobileMenu(); showPage('contact');" style="font-size:16px; font-weight:700; text-decoration:none; color:var(--black); cursor:pointer;">Contact & WhatsApp</a>
+    </div>
+
+    <section id="page-home" class="page-section active">
+        <div class="hero">
+            <h1>Wear Luxury. Shop Premium Fashion USA • UK • Dubai</h1>
+            <p>24 Premium Products • Secure Checkout • AI Assistant answers 90% questions instantly</p>
+            <div class="hero-btns">
+                <button class="btn-gold" onclick="showPage('shop')">SHOP NOW →</button>
+                <button class="btn-outline" onclick="openChat()">Ask AI Assistant</button>
+            </div>
+            <div class="trust-box">
+                <span>⭐ 4.9/5 Rating</span>
+                <span>🛍️ 2,300+ Happy Customers</span>
+                <span>✈️ Trusted in USA, UK & Dubai</span>
+                <span>🔒 Visa • Mastercard • PayPal • Apple Pay</span>
+            </div>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <h4>International Express</h4>
+                <p>Fast and reliable delivery across USA, UK, and Dubai with tracking.</p>
+            </div>
+            <div class="feature-card">
+                <h4>Secure Payments</h4>
+                <p>Encrypted checkout with Visa, Mastercard, PayPal & WhatsApp support.</p>
+            </div>
+            <div class="feature-card">
+                <h4>30 Days Return</h4>
+                <p>Hassle-free 30 day return and exchange policy for total peace of mind.</p>
+            </div>
+            <div class="feature-card">
+                <h4>24/7 AI & WhatsApp</h4>
+                <p>Instant answers from AI or talk directly to founder Hika Yatesaf.</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2 class="section-title">Best Sellers & Featured Collection</h2>
+            <p class="section-sub">Handpicked luxury wear crafted for the modern global wardrobe.</p>
+            <div class="product-grid" id="bestSellerGrid"></div>
+            <div style="text-align: center; margin-top: 40px;">
+                <button class="btn-gold" onclick="showPage('shop')">View All 24 Products →</button>
+            </div>
+        </div>
+    </section>
+    
