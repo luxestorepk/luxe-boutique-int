@@ -1,168 +1,708 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LUXE BOUTIQUE - Premium Fashion USA • UK • Dubai</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#fff;color:#111}
-.topbar{background:#000;color:#fff;text-align:center;padding:8px;font-size:12px}
-.topbar b{color:#FFD700}
-header{position:sticky;top:0;background:#fff;z-index:100;border-bottom:1px solid #eee;padding:10px 15px;display:flex;flex-wrap:wrap;align-items:center;gap:10px;justify-content:space-between}
-.logo{font-weight:900;font-size:22px;letter-spacing:1px}
-.logo span{color:#C9A227}
-.searchbox{display:flex;flex:1;max-width:480px;min-width:220px}
-.searchbox input{flex:1;padding:10px 12px;border:1px solid #ddd;border-radius:20px 0 0 20px;outline:none}
-.searchbox button{background:#000;color:#fff;border:none;padding:10px 16px;border-radius:0 20px 20px 0;cursor:pointer}
-nav{display:flex;gap:14px;flex-wrap:wrap}
-nav a{cursor:pointer;font-size:14px;font-weight:600;color:#111;text-decoration:none}
-nav a:hover{color:#C9A227}
-.topbtns{display:flex;gap:8px;align-items:center}
-select{padding:7px;border-radius:20px;border:1px solid #ddd}
-.cartbtn{background:#000;color:#fff;border:none;padding:8px 14px;border-radius:20px;cursor:pointer}
-.hero{background:linear-gradient(135deg,#1a1a1a,#4a3f00);color:#fff;margin:15px;border-radius:18px;padding:28px 22px}
-.hero h1{font-size:32px;line-height:1.2}
-.hero h1 span{color:#FFD700}
-.hero p{margin:10px 0;color:#ddd;font-size:14px}
-.btn1{background:#FFD700;border:none;padding:11px 18px;border-radius:20px;font-weight:700;cursor:pointer}
-.btn2{background:#fff;border:none;padding:11px 18px;border-radius:20px;font-weight:700;cursor:pointer;margin-left:6px}
-.trustbox{background:#fff;color:#111;border-radius:12px;padding:12px;margin-top:16px;max-width:420px;font-size:13px}
-.filters{display:flex;gap:8px;flex-wrap:wrap;padding:0 15px;margin-top:10px}
-.filters select{padding:8px 10px;border-radius:20px;border:1px solid #ddd}
-.section{padding:18px 15px}
-.section h2{font-size:22px}
-.muted{color:#777;font-size:13px;margin:4px 0 14px}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-@media(min-width:800px){.grid{grid-template-columns:repeat(4,1fr)}}
-.card{border:1px solid #eee;border-radius:14px;overflow:hidden;background:#fff}
-.card img{width:100%;height:220px;object-fit:cover}
-.card-body{padding:10px}
-.cat{font-size:11px;color:#C9A227;font-weight:700}
-.card-body h3{font-size:15px;margin:4px 0;min-height:36px}
-.stars{font-size:12px}
-.price{font-weight:800;margin:5px 0}
-.old{text-decoration:line-through;color:#999;font-weight:400;font-size:13px}
-.badge{background:#FFF3CD;font-size:11px;padding:3px 8px;border-radius:10px;font-weight:700}
-.card-btns{display:flex;gap:5px;margin-top:8px;flex-wrap:wrap}
-.addbtn{background:#000;color:#fff;border:none;padding:8px 10px;border-radius:20px;font-size:12px;cursor:pointer;flex:1}
-.wabtn{background:#25D366;color:#fff;border:none;padding:8px 10px;border-radius:20px;font-size:12px;cursor:pointer;flex:1}
-.heartbtn{background:#f1f1f1;border:none;padding:8px 10px;border-radius:20px;cursor:pointer}
-.features{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;padding:0 15px 18px}
-@media(min-width:800px){.features{grid-template-columns:repeat(4,1fr)}}
-.feat{background:#FFF9E6;padding:12px;border-radius:12px;text-align:center;font-size:13px}
-.page{display:none}
-.page.active{display:block}
-.aboutbox,.reviewbox,.contactbox{background:#f9f9f9;padding:16px;border-radius:14px;margin:10px 0;line-height:1.7;font-size:14px}
-.review{ background:#fff;border:1px solid #eee;padding:12px;border-radius:12px;margin:8px 0}
-footer{background:#000;color:#fff;padding:20px 15px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px;font-size:13px}
-footer b{font-size:15px}
-footer p{color:#bbb;margin-top:6px;line-height:1.6}
-.cartdrawer{position:fixed;right:-320px;top:0;width:300px;height:100%;background:#fff;z-index:999;box-shadow:-5px 0 20px rgba(0,0,0,.2);padding:16px;transition:.3s;overflow:auto}
-.cartdrawer.open{right:0}
-.cartdrawer input{width:100%;padding:9px;margin:8px 0;border:1px solid #ddd;border-radius:10px}
-.cartdrawer button{width:100%;padding:10px;border:none;border-radius:20px;cursor:pointer;margin-top:6px;font-weight:700}
-.checkoutbtn{background:#000;color:#fff}
-.wacheckout{background:#25D366;color:#fff}
-.closebtn{background:#eee}
-.chatfab{position:fixed;bottom:16px;right:16px;background:#000;color:#fff;border:none;padding:12px 16px;border-radius:30px;cursor:pointer;z-index:999;font-weight:700}
-.chatbox{position:fixed;bottom:65px;right:16px;width:320px;max-width:calc(100vw - 32px);height:420px;background:#fff;border:1px solid #ddd;border-radius:16px;display:none;flex-direction:column;overflow:hidden;z-index:1000;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.chathead{background:#000;color:#fff;padding:12px;font-weight:700;display:flex;justify-content:space-between}
-.chathead small{display:block;font-weight:400;font-size:11px;color:#FFD700}
-.chatmsgs{flex:1;overflow:auto;padding:10px;display:flex;flex-direction:column;gap:8px}
-.msg{padding:9px 11px;border-radius:14px;font-size:13px;line-height:1.5;max-width:85%}
-.msg.bot{background:#f1f1f1;align-self:flex-start}
-.msg.me{background:#000;color:#fff;align-self:flex-end}
-.chatinput{display:flex;border-top:1px solid #eee}
-.chatinput input{flex:1;padding:11px;border:none;outline:none}
-.chatinput button{background:#000;color:#fff;border:none;padding:0 16px;cursor:pointer}
-.quickbtns{display:flex;gap:5px;flex-wrap:wrap;padding:8px;border-top:1px solid #eee}
-.quickbtns button{background:#FFF3CD;border:1px solid #FFD700;border-radius:20px;padding:5px 9px;font-size:11px;cursor:pointer}
-</style>
-</head>
-<body>
-<div class="topbar">FREE SHIPPING OVER $75 USA • £60 UK • AED 300 DUBAI | Code: <b>WELCOME10 = 10% OFF</b> | 30 DAYS EASY RETURN</div>
-<header>
-<div class="logo">LUXE<span>BOUTIQUE</span></div>
-<div class="searchbox"><input id="searchInput" placeholder="Search Black Dress, Red Kurti, Abaya..." oninput="doSearch()"><button onclick="doSearch()">Search</button></div>
-<nav><a onclick="showPage('home')">Home</a><a onclick="showPage('shop')">Shop</a><a onclick="showPage('about')">About</a><a onclick="showPage('reviews')">Reviews</a><a onclick="showPage('contact')">Contact</a></nav>
-<div class="topbtns"><select id="currency" onchange="renderProducts();updateCart()"><option value="USD">USD $</option><option value="GBP">GBP £</option><option value="AED">AED</option></select><button class="cartbtn" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button></div>
-</header>
-
-<!-- HOME -->
-<div id="home" class="page active">
-<div class="hero"><h1>Wear Luxury.<br><span>Shop Premium Fashion</span><br>USA • UK • Dubai</h1><p>24 Premium Products • Secure Checkout • AI Assistant answers 90% questions</p><button class="btn1" onclick="showPage('shop')">SHOP NOW →</button><button class="btn2" onclick="openChat()">Ask AI Assistant</button><div class="trustbox">⭐ <b>4.9 / 5 - 2,300+ Happy Customers</b><br>Trusted in USA, UK & Dubai. Stripe + PayPal + WhatsApp Order.<br>✅ Visa • Mastercard • PayPal • Apple Pay</div></div>
-<div class="filters"><select id="catFilter" onchange="doSearch()"><option value="">All Categories</option><option>Dresses</option><option>Kurtis</option><option>Abayas</option><option>Hijab</option><option>Co-Ord Sets</option></select><select id="priceFilter" onchange="doSearch()"><option value="">All Prices</option><option value="0-50">Under $50</option><option value="50-90">$50 - $90</option><option value="90-200">$90 - $200</option></select><select id="sortFilter" onchange="doSearch()"><option value="">Sort: Featured</option><option value="low">Price: Low to High</option><option value="high">Price: High to Low</option></select></div>
-<div class="section"><h2>✨ Best Sellers</h2><p class="muted">Search upar se kaam karega - jo likhoge wahi product aa jayega.</p><div class="grid" id="productGrid"></div></div>
-<div class="features"><div class="feat">🚀 <b>Fast Shipping</b><br>USA 3-5 Days • UK 3-5 Days • Dubai Next Day</div><div class="feat">🔒 <b>Secure Payment</b><br>Stripe + PayPal + Apple Pay</div><div class="feat">↩️ <b>30 Days Return</b><br>Easy Return, No Questions</div><div class="feat">💬 <b>AI + WhatsApp</b><br>24/7 Assistant + WhatsApp Order</div></div>
-</div>
-
-<!-- SHOP -->
-<div id="shop" class="page"><div class="section"><h2>🛍️ Shop All - 24 Products</h2><p class="muted">Filter upar Home page se lagao ya yahan sab dekho.</p><div class="grid" id="shopGrid"></div></div></div>
-
-<!-- ABOUT -->
-<div id="about" class="page"><div class="section"><h2>About LUXE BOUTIQUE</h2><div class="aboutbox"><b>We are a Premium Fashion Boutique for USA, UK & Dubai.</b><br><br>✅ 2,300+ Happy Customers<br>✅ 4.9 / 5 Rating<br>✅ Premium Fabric - Silk, Chiffon, Velvet, Cotton<br>✅ Sizes: XS to XXL - All Products<br>✅ 30 Days Easy Return<br><br><b>Our Story:</b> Hum ne LUXE BOUTIQUE is liye banaya taake USA, UK aur Dubai ki ladies ko ek hi jagah pe Premium Dresses, Kurtis, Abayas, Hijab aur Co-Ord Sets mil jayein - achi quality, sahi price, fast delivery.<br><br><b>Why Choose Us?</b><br>1. Real Photos - Jo dikhta hai wahi milta hai<br>2. Secure Payment - Visa, Mastercard, PayPal, Apple Pay<br>3. Fast Shipping - USA 3-5 Days, UK 3-5 Days, Dubai Next Day<br>4. Human Support - WhatsApp pe 2 hours me reply</div></div></div>
-
-<!-- REVIEWS -->
-<div id="reviews" class="page"><div class="section"><h2>⭐ Customer Reviews - 4.9 / 5</h2><div class="review"><b>Sarah - New York, USA ⭐⭐⭐⭐⭐</b><br>"Black Luxury Dress is amazing! Quality is next level. Delivered in 4 days."</div><div class="review"><b>Aisha - Dubai ⭐⭐⭐⭐⭐</b><br>"Beige Abaya is so premium. Next day delivery in Dubai. Highly recommended!"</div><div class="review"><b>Fatima - London, UK ⭐⭐⭐⭐⭐</b><br>"Ordered Kurti + Hijab. Both perfect. WhatsApp support was very helpful."</div><div class="review"><b>Emily - Los Angeles, USA ⭐⭐⭐⭐⭐</b><br>"Gold Party Dress - everyone asked where I bought it from!"</div></div></div>
-
-<!-- CONTACT -->
-<div id="contact" class="page"><div class="section"><h2>📞 Contact Us</h2><div class="contactbox"><b>WhatsApp:</b> +971 50 000 0000 (Fastest - 2 Hours Reply)<br><b>Email:</b> hello@luxeboutique.com<br><b>Hours:</b> 24/7 AI Assistant + Human 9AM - 9PM Dubai Time<br><b>Shipping:</b> USA 3-5 Days | UK 3-5 Days | Dubai Next Day<br><b>Return:</b> 30 Days Easy Return<br><br><button class="btn1" onclick="openChat()">Chat with AI Assistant</button> <button class="btn1" style="background:#25D366;color:#fff" onclick="window.open('https://wa.me/971500000000','_blank')">Chat on WhatsApp</button></div></div></div>
-
-<footer><div><b>LUXE BOUTIQUE</b><p>Premium Fashion for USA • UK • Dubai<br>hello@luxeboutique.com<br>WhatsApp: +971 50 000 0000</p></div><div><b>Shop</b><p>Dresses • Kurtis • Abayas • Hijab • Co-Ord Sets</p></div><div><b>Help</b><p onclick="showPage('about')">Shipping • Return • Size Guide • Track Order</p></div><div><b>Payment</b><p>Visa • Mastercard • PayPal • Apple Pay • WhatsApp</p></div></footer>
-
-<!-- CART -->
-<div class="cartdrawer" id="cartDrawer"><h3>🛒 Your Cart</h3><div id="cartItems" style="margin:12px 0"></div><input id="coupon" placeholder="Coupon Code - Try WELCOME10"><button onclick="applyCoupon()" style="background:#FFD700">Apply Coupon</button><p id="cartTotal" style="font-weight:800;margin:10px 0">Total: $0</p><p id="shipInfo" style="font-size:12px;color:#666"></p><button class="checkoutbtn" onclick="checkout()">Checkout Securely</button><button class="wacheckout" onclick="orderWhatsApp()">Order on WhatsApp</button><button class="closebtn" onclick="toggleCart()">Close</button></div>
-
-<!-- AI CHAT -->
-<button class="chatfab" onclick="openChat()">💬 Luxe AI Assistant - 90% Answers</button>
-<div class="chatbox" id="chatBox" style="display:none"><div class="chathead"><div>Luxe AI Assistant<small>● Online - Replies Instantly</small></div><span onclick="openChat()" style="cursor:pointer">✕</span></div><div class="chatmsgs" id="chatMsgs"></div><div class="quickbtns"><button onclick="quickAsk('Price?')">Price?</button><button onclick="quickAsk('Size?')">Size?</button><button onclick="quickAsk('Shipping?')">Shipping?</button><button onclick="quickAsk('Return?')">Return?</button><button onclick="quickAsk('Suggest party dress')">Party Dress?</button></div><div class="chatinput"><input id="chatText" placeholder="Ask Price, Size, Shipping..."><button onclick="sendChat()">Send</button></div></div>
-<script>
-const products=[
-{id:1,name:"Black Luxury Evening Dress",cat:"Dresses",price:89,old:129,rating:"⭐⭐⭐⭐⭐ (214)",img:"https://images.nightcafe.studio/ik-seo/jobs/Awurthf9xDo9wWBeW4OW/Awurthf9xDo9wWBeW4OW--0--k1ssg/amor.jpg?tr=w-600,c-at_max",tag:"BEST SELLER"},
-{id:2,name:"Red Premium Kurti",cat:"Kurtis",price:49,old:69,rating:"⭐⭐⭐⭐⭐ (189)",img:"https://assets0.mirraw.com/images/14323970/y26Sqvfb_0233583256c74ecb97c7bf15172562ef_original_zoom.jpg",tag:"NEW"},
-{id:3,name:"Beige Luxury Abaya",cat:"Abayas",price:99,old:149,rating:"⭐⭐⭐⭐⭐ (312)",img:"https://cdn11.bigcommerce.com/s-vxgddcuawo/images/stencil/1280w/products/250/821/Model_wearing_beige_202604032257__32549.1775243567.jpg",tag:"DUBAI FAVOURITE"},
-{id:4,name:"Silk Hijab - Premium",cat:"Hijab",price:29,old:39,rating:"⭐⭐⭐⭐⭐ (421)",img:"https://uniquehijabs.com/cdn/shop/files/193A7491.png?v=1770674790&width=800",tag:"BEST SELLER"},
-{id:5,name:"White Co-Ord Set",cat:"Co-Ord Sets",price:69,old:89,rating:"⭐⭐⭐⭐⭐ (98)",img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600",tag:"TRENDING"},
-{id:6,name:"Gold Party Dress",cat:"Dresses",price:119,old:159,rating:"⭐⭐⭐⭐⭐ (176)",img:"https://www.ladyblacktie.com/cdn/shop/files/CD729GOLD-a.jpg?format=webp&quality=80&v=1767813074&width=800",tag:"PARTY"},
-{id:7,name:"Green Embroidered Kurti",cat:"Kurtis",price:59,old:79,rating:"⭐⭐⭐⭐⭐ (143)",img:"https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600",tag:"NEW"},
-{id:8,name:"Black Open Abaya",cat:"Abayas",price:109,old:139,rating:"⭐⭐⭐⭐⭐ (268)",img:"https://i.pinimg.com/originals/91/a9/6f/91a96ff0355ec134cd212d21a3658c9b.jpg",tag:"PREMIUM"},
-{id:9,name:"Pink Floral Dress",cat:"Dresses",price:65,old:85,rating:"⭐⭐⭐⭐⭐ (121)",img:"https://cdn.shopify.com/s/files/1/0752/6435/files/NUGOPINK_1____HERO_compact.webp?v=1745917713",tag:"SUMMER"},
-{id:10,name:"Navy Blue Kurti Set",cat:"Kurtis",price:55,old:75,rating:"⭐⭐⭐⭐⭐ (87)",img:"https://neelufercreation.com/cdn/shop/files/11_dc2579e6-74b6-4dcb-8d91-3a9dad96ebea.jpg?v=1776858574&width=823",tag:""},
-{id:11,name:"Chiffon Hijab - 3 Pack",cat:"Hijab",price:39,old:59,rating:"⭐⭐⭐⭐⭐ (356)",img:"https://voilechic.com/cdn/shop/files/NudePremiumChiffon_1.jpg?v=1772603237&width=800",tag:"VALUE PACK"},
-{id:12,name:"Beige Co-Ord Set",cat:"Co-Ord Sets",price:75,old:95,rating:"⭐⭐⭐⭐⭐ (154)",img:"https://beechtree.pk/cdn/shop/files/BT2240001AB4011_4_17299b3a-9641-40ec-a57a-068ef0c04173.jpg?v=1738073643",tag:""},
-{id:13,name:"Maroon Velvet Dress",cat:"Dresses",price:95,old:125,rating:"⭐⭐⭐⭐⭐ (203)",img:"https://img.staticdj.com/d4726df1674b2cf168f9eb6791ae0469_720x.jpeg",tag:"WINTER"},
-{id:14,name:"White Luxury Abaya",cat:"Abayas",price:115,old:145,rating:"⭐⭐⭐⭐⭐ (191)",img:"https://abayabuth.com/cdn/shop/files/AB_32_004_38d0cea4-abfb-40a7-b9ad-0a4f5370ab29_1000x.jpg?v=1740861346",tag:"PREMIUM"},
-{id:15,name:"Yellow Summer Dress",cat:"Dresses",price:45,old:65,rating:"⭐⭐⭐⭐⭐ (76)",img:"https://cdn-st2.vigbo.com/u138290/114266/blog/8163132/8203842/106475658/500-717b8694da9b7848c31355284ebe7039.jpg",tag:"SUMMER"},
-{id:16,name:"Pastel Kurti - 2 Pcs",cat:"Kurtis",price:52,old:68,rating:"⭐⭐⭐⭐⭐ (112)",img:"https://www.lakshita.com/cdn/shop/files/Lakshita_Fashions_-_2844-Edit.jpg?crop=center&height=600&v=1752854379&width=600",tag:""},
-{id:17,name:"Satin Hijab - Luxury",cat:"Hijab",price:35,old:45,rating:"⭐⭐⭐⭐⭐ (298)",img:"https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/render/image/public/project-uploads/a9ca71f2-9ed6-4deb-bdfa-a6ddb126d30f/A-woman-wearing-a-premium-satin-or-chiffon-hijab-1771238935183.jpeg?width=800&height=800&resize=contain",tag:"LUXURY"},
-{id:18,name:"Black Co-Ord Set",cat:"Co-Ord Sets",price:79,old:99,rating:"⭐⭐⭐⭐⭐ (167)",img:"https://pallajaipur.com/cdn/shop/files/Black_Luxe_Cotton_Co-Ord_Set_-_Palla_Jaipur-5919385.jpg?v=1732526372&width=540",tag:"BEST SELLER"},
-{id:19,name:"Blue Denim Dress",cat:"Dresses",price:58,old:78,rating:"⭐⭐⭐⭐⭐ (93)",img:"https://www.ladyblacktie.com/cdn/shop/files/ID22986_DARKINDIGO_6_a48bb70f-a544-420e-905e-8379fd3745c4.jpg?v=1767813339&width=800",tag:"CASUAL"},
-{id:20,name:"Embroidered Abaya - Gold",cat:"Abayas",price:139,old:179,rating:"⭐⭐⭐⭐⭐ (245)",img:"https://ronq-create-style.lovable.app/assets/hero-roanaq-mobile-Clo2UBq-.jpg",tag:"LUXURY"},
-{id:21,name:"Peach Party Kurti",cat:"Kurtis",price:62,old:82,rating:"⭐⭐⭐⭐⭐ (134)",img:"https://adn-static1.nykaa.com/nykdesignstudio-images/pub/media/catalog/product/2/e/2e800f33PCCSJ04N30998195-PEACH_1.jpg?rnd=20200526195200&tr=w-600",tag:"PARTY"},
-{id:22,name:"Floral Maxi Dress",cat:"Dresses",price:72,old:92,rating:"⭐⭐⭐⭐⭐ (188)",img:"https://i.pinimg.com/originals/ef/bc/f6/efbcf6f27b7393422bec1820caece1f4.jpg",tag:"TRENDING"},
-{id:23,name:"Grey Winter Co-Ord",cat:"Co-Ord Sets",price:85,old:105,rating:"⭐⭐⭐⭐⭐ (109)",img:"http://gipsyonline.com/cdn/shop/files/9SET245632GREY.BLACK6_1200x1200.jpg?v=1752298340",tag:"WINTER"},
-{id:24,name:"Jersey Hijab - Black",cat:"Hijab",price:25,old:35,rating:"⭐⭐⭐⭐⭐ (512)",img:"https://souk-dubai.com/cdn/shop/files/hijab-jersey-premium-noir.jpg?v=1743597088&width=600",tag:"BEST SELLER"}
-];
-let cart=[],discount=0;
-function fmt(p){let c=document.getElementById('currency').value;if(c==='AED')return 'AED '+(p*3.67).toFixed(0);if(c==='GBP')return '£'+(p*0.79).toFixed(0);return '$'+p.toFixed(0)}
-function cardHTML(p){return `<div class="card"><img src="${p.img}" onerror="this.src='https://via.placeholder.com/600x800?text=LUXE+BOUTIQUE'"><div class="card-body"><div class="cat">${p.cat.toUpperCase()}</div><h3>${p.name}</h3><div class="stars">${p.rating}</div><div class="price">${fmt(p.price)} <span class="old">${fmt(p.old)}</span></div>${p.tag?`<span class="badge">✨ ${p.tag}</span>`:''}<div class="card-btns"><button class="addbtn" onclick="addToCart(${p.id})">Add to Cart</button><button class="wabtn" onclick="buyWhatsApp(${p.id})">WhatsApp</button><button class="heartbtn" onclick="alert('Saved to Wishlist ❤️')">♡</button></div><p style="font-size:12px;color:#888;margin-top:6px">Size: XS - XXL • In Stock • Free Return 30 Days</p></div></div>`}
-function renderProducts(){let g=document.getElementById('productGrid');if(g)g.innerHTML=products.slice(0,8).map(cardHTML).join('');let s=document.getElementById('shopGrid');if(s)s.innerHTML=products.map(cardHTML).join('');}
-function doSearch(){let q=document.getElementById('searchInput').value.toLowerCase();let cat=document.getElementById('catFilter').value;let pr=document.getElementById('priceFilter').value;let sort=document.getElementById('sortFilter').value;let list=products.filter(p=>{let ok=(p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q));if(cat&&p.cat!==cat)ok=false;if(pr){let[a,b]=pr.split('-').map(Number);if(p.price<a||p.price>b)ok=false}return ok});if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);document.getElementById('productGrid').innerHTML=list.length?list.map(cardHTML).join(''):'<p>No products found. Try Dress, Kurti, Abaya...</p>';document.getElementById('shopGrid').innerHTML=list.map(cardHTML).join('');}
-function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
-function addToCart(id){let p=products.find(x=>x.id===id);cart.push(p);updateCart();alert(p.name+' Added to Cart 🛒')}
-function updateCart(){document.getElementById('cartCount').innerText=cart.length;let total=cart.reduce((s,p)=>s+p.price,0);let final=total*(1-discount);document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<p>${p.name} - ${fmt(p.price)} <span style="float:right;cursor:pointer" onclick="cart.splice(${i},1);updateCart()">✕</span></p>`).join(''):'<p>Cart is empty</p>';document.getElementById('cartTotal').innerText='Total: '+fmt(final)+(discount?' (10% OFF Applied)':'');let c=document.getElementById('currency').value;document.getElementById('shipInfo').innerText=c==='AED'?'Shipping: AED 20 - Next Day Dubai | Free over AED 300':c==='GBP'?'Shipping: £4.99 - 3-5 Days UK | Free over £60':'Shipping: $5.99 - 3-5 Days USA | Free over $75'}
-function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');updateCart()}
-function applyCoupon(){let v=document.getElementById('coupon').value.trim().toUpperCase();if(v==='WELCOME10'){discount=0.10;updateCart();alert('10% Discount Applied!')}else alert('Invalid Code. Try WELCOME10')}
-function checkout(){if(!cart.length)return alert('Cart is empty');alert('Demo Checkout: In real store this goes to Stripe / PayPal. Total: '+document.getElementById('cartTotal').innerText)}
-function buyWhatsApp(id){let p=products.find(x=>x.id===id);let msg=encodeURIComponent('Hi LUXE BOUTIQUE! I want to order: '+p.name+' - Price: '+fmt(p.price)+' - Size: M - Please confirm.');window.open('https://wa.me/971500000000?text='+msg,'_blank')}
-function orderWhatsApp(){if(!cart.length)return alert('Cart is empty');let txt='Hi LUXE BOUTIQUE! My Order:\n'+cart.map(p=>'- '+p.name+' '+fmt(p.price)).join('\n');window.open('https://wa.me/971500000000?text='+encodeURIComponent(txt),'_blank')}
-function openChat(){let b=document.getElementById('chatBox');let isOpen=b.style.display==='flex';b.style.display=isOpen?'none':'flex';if(!isOpen&&!document.getElementById('chatMsgs').innerHTML){addBot('Hi! I am Luxe AI Assistant ✨ I can answer 90% questions. Ask me: Price, Size, Shipping, Return, Party Dress...')}}
-function addBot(t){document.getElementById('chatMsgs').innerHTML+=`<div class="msg bot">${t}</div>`;document.getElementById('chatMsgs').scrollTop=9999}
-function quickAsk(q){document.getElementById('chatText').value=q;sendChat()}
-function sendChat(){let inp=document.getElementById('chatText');let q=inp.value.trim();if(!q)return;document.getElementById('chatMsgs').innerHTML+=`<div class="msg me">${q}</div>`;inp.value='';let l=q.toLowerCase();setTimeout(()=>{if(l.includes('price')||l.includes('cost')||l.includes('discount')||l.includes('cheap'))addBot('Our prices are $25 - $139. Use Code WELCOME10 for 10% OFF! Best Sellers: Black Dress $89, Beige Abaya $99, Silk Hijab $29, Kurti $49.');else if(l.includes('size')||l.includes('medium')||l.includes('large')||l.includes('xl')||l.includes('small'))addBot('Size Guide: XS - XXL available. US: S=4-6, M=8-10, L=12-14, XL=16. All products me sab sizes available hain. Kaun sa product chahiye?');else if(l.includes('ship')||l.includes('deliver')||l.includes('usa')||l.includes('uk')||l.includes('dubai')||l.includes('delivery'))addBot('Shipping: USA 3-5 Days $5.99 (Free over $75), UK 3-5 Days £4.99 (Free over £60), Dubai Next Day AED 20 (Free over AED 300).');else if(l.includes('return')||l.includes('refund')||l.includes('exchange'))addBot('30 Days Easy Return! Agar pasand na aaye to 30 din me return karo, 3 din me refund mil jayega. No questions.');else if(l.includes('order')||l.includes('track')||l.includes('payment')||l.includes('pay'))addBot('Order karne ke 2 tareeqe: 1) Add to Cart > Checkout 2) WhatsApp button pe click karo. Payment: Visa, Mastercard, PayPal, Apple Pay. Track ke liye Order Number bhejo.');else if(l.includes('party')||l.includes('wedding')||l.includes('suggest')||l.includes('dress'))addBot('For Party: 1) Gold Party Dress $119 ⭐ 2) Black Luxury Dress $89 ⭐ 3) Peach Party Kurti $62. Konsi pasand aayi?');else if(l.includes('abaya'))addBot('Abaya Collection: Beige Luxury Abaya $99, Black Open Abaya $109, White Luxury Abaya $115, Gold Embroidered Abaya $139. Sab Dubai Favourite hain!');else if(l.includes('hijab'))addBot('Hijab Collection: Silk Hijab $29, Chiffon 3-Pack $39, Satin Luxury $35, Jersey Black $25. Sab premium quality!');else if(l.includes('kurti'))addBot('Kurti Collection: Red Premium Kurti $49, Green Embroidered $59, Navy Set $55, Peach Party $62, Pastel 2-Pcs $52.');else if(l.includes('human')||l.includes('whatsapp')||l.includes('person')||l.includes('call'))addBot('Sure! WhatsApp karo: +971 50 000 0000 - Human 2 hours me reply karega. Ya kisi bhi product pe WhatsApp button dabao.');else if(l.includes('hi')||l.includes('hello')||l.includes('salam')||l.includes('hey'))addBot('Hello! 👋 Welcome to LUXE BOUTIQUE. Main aapki kya madad kar sakta hun? Price, Size, Shipping, Return ya Party Dress suggest karun?');else addBot('Great question! Best Sellers: Black Dress $89, Beige Abaya $99, Silk Hijab $29. Mujhse pucho: Price? Size? Shipping? Return? Party Dress? Main 90% sawalon ka jawab deta hun!');},300)}
-document.getElementById('chatText').addEventListener('keypress',e=>{if(e.key==='Enter')sendChat()});
-renderProducts();updateCart();
-</script>
-</body>
-</html>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUXE BOUTIQUE - International Store for USA, UK, Dubai</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --black: #000000;
+            --white: #ffffff;
+            --gold: #C9A227;
+            --gold-btn: #FFD700;
+            --light-grey: #f9f9f9;
+            --dark-grey: #333333;
+            --border-color: #e5e7eb;
+            --whatsapp: #25D366;
+        }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        body {
+            background-color: var(--white);
+            color: var(--black);
+            line-height: 1.6;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+        }
+        .announcement-bar {
+            background-color: var(--black);
+            color: var(--gold-btn);
+            text-align: center;
+            font-size: 13px;
+            padding: 8px 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+        }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+            letter-spacing: 1px;
+            cursor: pointer;
+        }
+        .logo span {
+            color: var(--gold);
+        }
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--black);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .search-box {
+            display: flex;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .search-box input {
+            padding: 8px 12px;
+            border: none;
+            outline: none;
+            font-size: 13px;
+            width: 160px;
+        }
+        .search-box button {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 0 12px;
+            cursor: pointer;
+            font-size: 13px;
+        }
+        .currency-select {
+            padding: 6px 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            background: var(--white);
+            cursor: pointer;
+        }
+        .cart-btn {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .cart-btn:hover {
+            background: var(--dark-grey);
+        }
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .page-section {
+            display: none;
+            min-height: 70vh;
+        }
+        .page-section.active {
+            display: block;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover no-repeat;
+            color: var(--white);
+            text-align: center;
+            padding: 100px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .hero h1 {
+            font-size: 42px;
+            max-width: 900px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            color: var(--white);
+        }
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin-bottom: 30px;
+            color: #f3f3f3;
+        }
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .btn-gold {
+            background-color: var(--gold-btn);
+            color: var(--black);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: opacity 0.2s;
+        }
+        .btn-gold:hover {
+            opacity: 0.9;
+        }
+        .btn-outline {
+            background: transparent;
+            color: var(--white);
+            border: 2px solid var(--white);
+            padding: 14px 28px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+        .trust-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 15px 30px;
+            border-radius: 8px;
+            font-size: 14px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            padding: 50px 5%;
+            background: var(--light-grey);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .feature-card {
+            background: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid var(--border-color);
+        }
+        .feature-card h4 {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+        .feature-card p {
+            font-size: 13px;
+            color: #666;
+        }
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        .section-sub {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+        .filters-container {
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            background: var(--light-grey);
+            padding: 15px 20px;
+            border-radius: 8px;
+        }
+        .filter-group {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .filter-group label {
+            font-weight: 600;
+            font-size: 13px;
+        }
+        .filter-select {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 13px;
+            background: var(--white);
+            cursor: pointer;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 25px;
+        }
+        @media (max-width: 1024px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .nav-links {
+                display: none;
+            }
+            .menu-toggle {
+                display: block;
+            }
+        }
+        @media (max-width: 576px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+        }
+        .product-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+        .product-img-wrap {
+            position: relative;
+            height: 220px;
+            overflow: hidden;
+            background: #f0f0f0;
+        }
+        .product-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.05);
+        }
+        .tag-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--black);
+            color: var(--white);
+            font-size: 10px;
+            font-weight: 700;
+            padding: 4px 8px;
+            border-radius: 3px;
+            letter-spacing: 0.5px;
+        }
+        .wishlist-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--white);
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-size: 16px;
+        }
+        .product-content {
+            padding: 15px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .product-cat {
+            font-size: 11px;
+            font-weight: 700;
+            color: var(--gold);
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+        }
+        .product-name {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--black);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            height: 42px;
+        }
+        .product-rating {
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .product-pricing {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+        .current-price {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--black);
+        }
+        .old-price {
+            font-size: 13px;
+            color: #888;
+            text-decoration: line-through;
+        }
+        .product-specs {
+            font-size: 11px;
+            color: #555;
+            margin-bottom: 15px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+        }
+        .product-actions {
+            display: grid;
+            grid-template-columns: 1fr 40px;
+            gap: 8px;
+            margin-top: auto;
+        }
+        .btn-add-cart {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 10px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-add-cart:hover {
+            background: var(--dark-grey);
+        }
+        .btn-wa-single {
+            background: var(--whatsapp);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            z-index: 200;
+            display: none;
+        }
+        .cart-drawer {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            background: var(--white);
+            z-index: 201;
+            box-shadow: -5px 0 25px rgba(0,0,0,0.15);
+            transition: right 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .cart-drawer.open {
+            right: 0;
+        }
+        .cart-header {
+            padding: 20px;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .cart-header h3 {
+            font-size: 18px;
+        }
+        .close-cart {
+            background: none;
+            border: none;
+            font-size: 22px;
+            cursor: pointer;
+        }
+        .cart-items {
+            flex-grow: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid var(--border-color);
+            align-items: center;
+        }
+        .cart-item img {
+            width: 60px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        .cart-item-details {
+            flex-grow: 1;
+        }
+        .cart-item-title {
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .cart-item-price {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--gold);
+        }
+        .remove-item {
+            background: none;
+            border: none;
+            color: #999;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .cart-footer {
+            padding: 20px;
+            border-top: 1px solid var(--border-color);
+            background: var(--light-grey);
+        }
+        .coupon-row {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        .coupon-row input {
+            flex-grow: 1;
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 13px;
+        }
+        .coupon-row button {
+            background: var(--black);
+            color: var(--white);
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+        }
+        .cart-summary-line {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        .cart-summary-line.total {
+            font-weight: 700;
+            font-size: 16px;
+            border-top: 1px solid var(--border-color);
+            padding-top: 8px;
+            margin-top: 8px;
+        }
+        .cart-shipping-note {
+            font-size: 12px;
+            color: #555;
+            margin-bottom: 15px;
+            background: #fff;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid var(--border-color);
+        }
+        .cart-checkout-btns {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .btn-checkout {
+            background: var(--gold-btn);
+            color: var(--black);
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        .btn-wa-checkout {
+            background: var(--whatsapp);
+            color: var(--white);
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-align: center;
+            cursor: pointer;
+            font-size: 14px;
+            text-decoration: none;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+            z-index: 300;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .modal-content {
+            background: var(--white);
+            width: 100%;
+            max-width: 550px;
+            border-radius: 8px;
+            padding: 30px;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .modal h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        .payment-options {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .payment-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .ai-chat-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--black);
+            color: var(--white);
+            border: 2px solid var(--gold);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            z-index: 150;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        .chat-box {
+          
