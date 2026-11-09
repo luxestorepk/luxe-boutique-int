@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LUXE BOUTIQUE - Premium Fashion | USA | UK | Dubai</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#fffdf8;color:#111}
+.topbar{background:#111;color:#fff;text-align:center;padding:8px;font-size:13px;letter-spacing:.5px}
+.topbar b{color:#d4af37}
+header{position:sticky;top:0;background:#fff;border-bottom:1px solid #eee;z-index:99;padding:12px 5%}
+.nav{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.logo{font-size:24px;font-weight:900;letter-spacing:2px}.logo span{color:#b8963a}
+.searchbox{flex:1;display:flex;background:#f3f3f3;border-radius:30px;overflow:hidden;border:1px solid #ddd;min-width:220px}
+.searchbox input{flex:1;border:0;background:transparent;padding:12px 16px;outline:none;font-size:15px}
+.searchbox button{background:#111;color:#fff;border:0;padding:0 20px;cursor:pointer}
+.navlinks{display:flex;gap:16px;font-weight:600;font-size:14px}
+.navlinks a{cursor:pointer;text-decoration:none;color:#111}
+.navlinks a:hover{color:#b8963a}
+.icons{display:flex;gap:12px;align-items:center}
+.iconbtn{background:#111;color:#fff;border:0;padding:9px 14px;border-radius:20px;cursor:pointer;font-weight:700}
+select{padding:9px;border-radius:20px;border:1px solid #ddd}
+.hero{margin:18px 5%;background:linear-gradient(90deg,#111,#3a2d10);color:#fff;border-radius:20px;padding:38px 28px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.hero h1{font-size:38px;line-height:1.1}.hero h1 span{color:#e8c85a}
+.hero p{margin:12px 0;color:#ddd}
+.btn{background:#d4af37;color:#111;border:0;padding:13px 22px;border-radius:30px;font-weight:800;cursor:pointer}
+.btn2{background:#fff;color:#111;border:1px solid #111;padding:12px 20px;border-radius:30px;font-weight:700;cursor:pointer}
+.filters{margin:10px 5%;display:flex;gap:10px;flex-wrap:wrap}
+.filters select,.filters input{padding:10px 14px;border-radius:20px;border:1px solid #ddd}
+.section{padding:10px 5% 30px}
+.section h2{font-size:26px;margin:18px 0 6px}.section p{color:#666;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{border:1px solid #eee;border-radius:16px;overflow:hidden;background:#fff;transition:.2s}
+.card:hover{transform:translateY(-3px);box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.card img{width:100%;height:280px;object-fit:cover}
+.card-body{padding:14px}
+.card-body h3{font-size:16px}.card-body .cat{font-size:12px;color:#b8963a;font-weight:800}
+.price{font-size:18px;font-weight:900;margin:6px 0}.old{color:#999;text-decoration:line-through;font-size:14px;font-weight:400}
+.stars{color:#e8a800;font-size:14px}
+.card-btns{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.addbtn{flex:1;background:#111;color:#fff;border:0;padding:10px;border-radius:20px;cursor:pointer;font-weight:700}
+.wabtn{background:#25D366;color:#fff;border:0;padding:10px 14px;border-radius:20px;cursor:pointer;font-weight:700}
+.heartbtn{background:#f3f3f3;border:0;padding:10px 12px;border-radius:20px;cursor:pointer}
+.badge{display:inline-block;background:#fff3cd;padding:4px 10px;border-radius:20px;font-size:12px;font-weight:800;margin-top:6px}
+.page{display:none}.page.active{display:block}
+.trust{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin:14px 5%}
+.trust div{background:#f9f6ec;border:1px solid #eee;padding:16px;border-radius:14px;text-align:center}
+.reviewbox{border:1px solid #eee;border-radius:14px;padding:16px;margin-bottom:12px}
+input,textarea{width:100%;padding:12px;border:1px solid #ddd;border-radius:12px;margin:6px 0}
+footer{background:#111;color:#ddd;padding:30px 5%;margin-top:20px;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+footer h3{color:#fff;margin-bottom:10px}
+#cartDrawer{position:fixed;right:0;top:0;width:360px;max-width:92%;height:100%;background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.2);padding:18px;z-index:200;transform:translateX(110%);transition:.3s;overflow:auto}
+#cartDrawer.open{transform:translateX(0)}
+#chatBtn{position:fixed;bottom:20px;right:20px;background:#111;color:#fff;border:0;padding:14px 18px;border-radius:30px;cursor:pointer;font-weight:800;z-index:300;box-shadow:0 10px 20px rgba(0,0,0,.2)}
+#chatBox{position:fixed;bottom:80px;right:20px;width:340px;max-width:92%;background:#fff;border:1px solid #ddd;border-radius:16px;z-index:300;display:none;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.15)}
+#chatBox header{background:#111;color:#fff;padding:14px;display:flex;justify-content:space-between}
+#chatMsgs{height:280px;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+.msg{padding:9px 12px;border-radius:12px;max-width:85%;font-size:14px}
+.me{background:#111;color:#fff;align-self:flex-end}.bot{background:#f3f3f3;align-self:flex-start}
+#chatInput{display:flex;border-top:1px solid #eee}#chatInput input{border:0}#chatInput button{background:#111;color:#fff;border:0;padding:0 16px;cursor:pointer}
+@media(max-width:600px){.hero h1{font-size:28px}.navlinks{display:none}}
+</style>
+</head>
+<body>
+<div class="topbar">FREE SHIPPING OVER $75 USA • £60 UK • AED 300 DUBAI | <b>Code: WELCOME10 = 10% OFF</b> | 30 DAYS EASY RETURN</div>
+<header><div class="nav">
+<div class="logo">LUXE<span>BOUTIQUE</span></div>
+<div class="searchbox"><input id="searchInput" placeholder="Search Black Dress, Red Kurti, Under $50... 🔍" oninput="doSearch()"><button onclick="doSearch()">Search</button></div>
+<div class="navlinks"><a onclick="showPage('home')">Home</a><a onclick="showPage('shop')">Shop</a><a onclick="showPage('about')">About</a><a onclick="showPage('reviews')">Reviews</a><a onclick="showPage('contact')">Contact</a></div>
+<div class="icons"><select id="currency" onchange="renderProducts()"><option value="USD">USD $</option><option value="AED">AED</option><option value="GBP">GBP £</option></select><button class="iconbtn" onclick="toggleCart()">🛒 Cart (<span id="cartCount">0</span>)</button></div>
+</div></header>
+
+<div id="home" class="page active">
+<div class="hero"><div><h1>Wear Luxury.<br><span>Shop Premium Fashion</span><br>USA • UK • Dubai</h1><p>24 Premium Products • Secure Checkout • AI Assistant answers 90% questions</p><button class="btn" onclick="showPage('shop')">SHOP NOW →</button> <button class="btn2" onclick="openChat()">Ask AI Assistant</button></div><div style="background:#fff;color:#111;padding:18px;border-radius:16px;min-width:240px"><b>⭐ 4.9 / 5 - 2,300+ Happy Customers</b><p style="color:#666;font-size:14px;margin:8px 0">Trusted in USA, UK & Dubai. Stripe + PayPal + WhatsApp Order.</p><p>✅ Visa • Mastercard • PayPal • Apple Pay</p></div></div>
+<div class="filters"><select id="catFilter" onchange="doSearch()"><option value="">All Categories</option><option>Dresses</option><option>Kurtis</option><option>Abayas</option><option>Hijab</option><option>Co-Ord Sets</option></select><select id="priceFilter" onchange="doSearch()"><option value="">All Prices</option><option value="0-50">Under $50</option><option value="50-100">$50 - $100</option><option value="100-200">$100+</option></select><select id="sortFilter" onchange="doSearch()"><option value="">Sort: Featured</option><option value="low">Price Low to High</option><option value="high">Price High to Low</option></select></div>
+<div class="section"><h2>✨ Best Sellers</h2><p>Search upar se kaam karega - jo likhoge wahi product aa jayega.</p><div class="grid" id="productGrid"></div></div>
+<div class="trust"><div>🚚 <b>Fast Shipping</b><p>USA 3-5 Days • UK 3-5 Days • Dubai Next Day</p></div><div>🔒 <b>Secure Payment</b><p>Stripe + PayPal + Apple Pay</p></div><div>↩️ <b>30 Days Return</b><p>Easy Return, No Questions</p></div><div>💬 <b>AI + WhatsApp</b><p>24/7 Assistant + WhatsApp Order</p></div></div>
+</div>
+
+<div id="shop" class="page"><div class="section"><h2>Shop All Collection - 24 Products</h2><p>Filter + Search + Sort sab kaam karega.</p><div class="grid" id="shopGrid"></div></div></div>
+<div id="about" class="page"><div class="section"><h2>Our Story</h2><p>LUXE BOUTIQUE was created for women who love premium fashion in USA, UK and Dubai. We design modest + modern fashion - Dresses, Kurtis, Abayas, Hijab. Every piece is checked for quality, stitching and fabric before shipping.</p><p><b>Why Us?</b><br>✅ Premium Fabric<br>✅ Perfect Stitching<br>✅ Fast International Shipping<br>✅ Secure Payment<br>✅ AI Assistant 24/7</p></div></div>
+<div id="reviews" class="page"><div class="section"><h2>⭐ 4.9 - Customer Reviews</h2><div class="reviewbox">⭐⭐⭐⭐⭐ <b>Sarah - USA</b><p>"Quality is amazing! Dress exactly like photo. Shipping was fast."</p></div><div class="reviewbox">⭐⭐⭐⭐⭐ <b>Ayesha - Dubai</b><p>"Ordered on WhatsApp, delivered next day. Fabric is premium."</p></div><div class="reviewbox">⭐⭐⭐⭐⭐ <b>Fatima - UK</b><p>"AI chatbot answered my size question instantly. Loved it."</p></div><div class="reviewbox">⭐⭐⭐⭐⭐ <b>Emily - USA</b><p>"Best boutique store. Return was super easy."</p></div></div></div>
+<div id="contact" class="page"><div class="section"><h2>Contact Us</h2><p>Email: hello@luxeboutique.com | WhatsApp: +971 50 000 0000 | Dubai • USA • UK</p><input placeholder="Your Name"><input placeholder="Your Email"><textarea placeholder="Your Message"></textarea><button class="btn" onclick="alert('Message Sent! We will reply in 2 hours.')">Send Message</button><h2 style="margin-top:20px">FAQ</h2><p><b>Shipping?</b> USA 3-5 Days $5.99, UK 3-5 Days £4.99, Dubai Next Day AED 20. Free over $75 / £60 / AED 300.</p><p><b>Return?</b> 30 Days Easy Return.</p><p><b>Payment?</b> Stripe, PayPal, Apple Pay + WhatsApp Order.</p></div></div>
+
+<div id="cartDrawer"><h2>🛒 Your Cart <span style="float:right;cursor:pointer" onclick="toggleCart()">✕</span></h2><div id="cartItems" style="margin:14px 0"></div><input id="coupon" placeholder="Coupon Code - Try WELCOME10"><button class="btn2" onclick="applyCoupon()" style="width:100%;margin:8px 0">Apply Coupon</button><h3 id="cartTotal">Total: $0</h3><p id="shipInfo" style="color:#666;font-size:13px"></p><button class="btn" style="width:100%;margin:8px 0" onclick="checkout()">Checkout with Stripe / PayPal</button><button class="wabtn" style="width:100%" onclick="orderWhatsApp()">Order via WhatsApp 🟢</button><p style="font-size:12px;color:#666;margin-top:8px">Secure Checkout • 30 Days Return • Visa • Mastercard • PayPal</p></div>
+
+<button id="chatBtn" onclick="openChat()">💬 Luxe AI Assistant - 90% Answers</button>
+<div id="chatBox"><header><span>💬 Luxe AI Assistant • Online 24/7</span><span style="cursor:pointer" onclick="openChat()">✕</span></header><div id="chatMsgs"></div><div id="chatInput"><input id="chatText" placeholder="Ask price, size, shipping..."><button onclick="sendChat()">Send</button></div></div>
+<footer><div><h3>LUXE BOUTIQUE</h3><p>Premium Fashion for USA • UK • Dubai</p></div><div><h3>Shop</h3><p>Dresses • Kurtis • Abayas • Hijab</p></div><div><h3>Help</h3><p>Shipping • Return • Size Guide • Track Order</p></div><div><h3>Payment</h3><p>Visa • Mastercard • PayPal • Apple Pay • WhatsApp</p></div></footer>
+<script>
+const products=[
+{id:1,name:"Black Luxury Evening Dress",cat:"Dresses",price:89,old:129,rating:"⭐⭐⭐⭐⭐ (214)",img:"https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=600",tag:"BEST SELLER"},
+{id:2,name:"Red Premium Kurti",cat:"Kurtis",price:49,old:69,rating:"⭐⭐⭐⭐⭐ (189)",img:"https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?w=600",tag:"NEW"},
+{id:3,name:"Beige Luxury Abaya",cat:"Abayas",price:99,old:149,rating:"⭐⭐⭐⭐⭐ (312)",img:"https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=600",tag:"DUBAI FAVOURITE"},
+{id:4,name:"Silk Hijab - Premium",cat:"Hijab",price:29,old:39,rating:"⭐⭐⭐⭐⭐ (421)",img:"https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=600",tag:"BEST SELLER"},
+{id:5,name:"White Co-Ord Set",cat:"Co-Ord Sets",price:69,old:89,rating:"⭐⭐⭐⭐⭐ (98)",img:"https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600",tag:"TRENDING"},
+{id:6,name:"Gold Party Dress",cat:"Dresses",price:119,old:159,rating:"⭐⭐⭐⭐⭐ (176)",img:"https://images.unsplash.com/photo-1496747611176-843222e1e57c?w=600",tag:"PARTY"},
+{id:7,name:"Green Embroidered Kurti",cat:"Kurtis",price:59,old:79,rating:"⭐⭐⭐⭐⭐ (143)",img:"https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600",tag:"NEW"},
+{id:8,name:"Black Open Abaya",cat:"Abayas",price:109,old:139,rating:"⭐⭐⭐⭐⭐ (268)",img:"https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=600",tag:"PREMIUM"},
+{id:9,name:"Pink Floral Dress",cat:"Dresses",price:65,old:85,rating:"⭐⭐⭐⭐⭐ (121)",img:"https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=600",tag:"SUMMER"},
+{id:10,name:"Navy Blue Kurti Set",cat:"Kurtis",price:55,old:75,rating:"⭐⭐⭐⭐⭐ (87)",img:"https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=600",tag:""},
+{id:11,name:"Chiffon Hijab - 3 Pack",cat:"Hijab",price:39,old:59,rating:"⭐⭐⭐⭐⭐ (356)",img:"https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=600",tag:"VALUE PACK"},
+{id:12,name:"Beige Co-Ord Set",cat:"Co-Ord Sets",price:75,old:95,rating:"⭐⭐⭐⭐⭐ (154)",img:"https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600",tag:""},
+{id:13,name:"Maroon Velvet Dress",cat:"Dresses",price:95,old:125,rating:"⭐⭐⭐⭐⭐ (203)",img:"https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600",tag:"WINTER"},
+{id:14,name:"White Luxury Abaya",cat:"Abayas",price:115,old:145,rating:"⭐⭐⭐⭐⭐ (191)",img:"https://images.unsplash.com/photo-1606902965551-dce093cda6e7?w=600",tag:"PREMIUM"},
+{id:15,name:"Yellow Summer Dress",cat:"Dresses",price:45,old:65,rating:"⭐⭐⭐⭐⭐ (76)",img:"https://images.unsplash.com/photo-1591369822096-ffd140ec948f?w=600",tag:"SUMMER"},
+{id:16,name:"Pastel Kurti - 2 Pcs",cat:"Kurtis",price:52,old:68,rating:"⭐⭐⭐⭐⭐ (112)",img:"https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?w=600",tag:""},
+{id:17,name:"Satin Hijab - Luxury",cat:"Hijab",price:35,old:45,rating:"⭐⭐⭐⭐⭐ (298)",img:"https://images.unsplash.com/photo-1610652492500-ded49ceeb378?w=600",tag:"LUXURY"},
+{id:18,name:"Black Co-Ord Set",cat:"Co-Ord Sets",price:79,old:99,rating:"⭐⭐⭐⭐⭐ (167)",img:"https://images.unsplash.com/photo-1554412933-514a83d2f3c8?w=600",tag:"BEST SELLER"},
+{id:19,name:"Blue Denim Dress",cat:"Dresses",price:58,old:78,rating:"⭐⭐⭐⭐⭐ (93)",img:"https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=600",tag:"CASUAL"},
+{id:20,name:"Embroidered Abaya - Gold",cat:"Abayas",price:139,old:179,rating:"⭐⭐⭐⭐⭐ (245)",img:"https://images.unsplash.com/photo-1610030469668-8e9f641aaf27?w=600",tag:"LUXURY"},
+{id:21,name:"Peach Party Kurti",cat:"Kurtis",price:62,old:82,rating:"⭐⭐⭐⭐⭐ (134)",img:"https://images.unsplash.com/photo-1585487000160-6ebcfceb0d03?w=600",tag:"PARTY"},
+{id:22,name:"Floral Maxi Dress",cat:"Dresses",price:72,old:92,rating:"⭐⭐⭐⭐⭐ (188)",img:"https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=600",tag:"TRENDING"},
+{id:23,name:"Grey Winter Co-Ord",cat:"Co-Ord Sets",price:85,old:105,rating:"⭐⭐⭐⭐⭐ (109)",img:"https://images.unsplash.com/photo-1483985988355-763728e1935b?w=600",tag:"WINTER"},
+{id:24,name:"Jersey Hijab - Black",cat:"Hijab",price:25,old:35,rating:"⭐⭐⭐⭐⭐ (512)",img:"https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=600",tag:"BEST SELLER"}
+];
+let cart=[],discount=0;
+function fmt(p){let c=document.getElementById('currency').value;if(c==='AED')return 'AED '+(p*3.67).toFixed(0);if(c==='GBP')return '£'+(p*0.79).toFixed(0);return '$'+p.toFixed(0)}
+function cardHTML(p){return `<div class="card"><img src="${p.img}"><div class="card-body"><div class="cat">${p.cat.toUpperCase()}</div><h3>${p.name}</h3><div class="stars">${p.rating}</div><div class="price">${fmt(p.price)} <span class="old">${fmt(p.old)}</span></div>${p.tag?`<span class="badge">✨ ${p.tag}</span>`:''}<div class="card-btns"><button class="addbtn" onclick="addToCart(${p.id})">Add to Cart</button><button class="wabtn" onclick="buyWhatsApp(${p.id})">WhatsApp</button><button class="heartbtn" onclick="alert('Saved to Wishlist ❤️')">♡</button></div><p style="font-size:12px;color:#888;margin-top:6px">Size: XS - XXL • In Stock • Free Return 30 Days</p></div></div>`}
+function renderProducts(){document.getElementById('productGrid').innerHTML=products.slice(0,8).map(cardHTML).join('');document.getElementById('shopGrid').innerHTML=products.map(cardHTML).join('');}
+function doSearch(){let q=document.getElementById('searchInput').value.toLowerCase();let cat=document.getElementById('catFilter').value;let pr=document.getElementById('priceFilter').value;let sort=document.getElementById('sortFilter').value;let list=products.filter(p=>{let ok=(p.name.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q)||fmt(p.price).toLowerCase().includes(q));if(cat&&p.cat!==cat)ok=false;if(pr){let[a,b]=pr.split('-').map(Number);if(p.price<a||p.price>b)ok=false}return ok});if(sort==='low')list.sort((a,b)=>a.price-b.price);if(sort==='high')list.sort((a,b)=>b.price-a.price);document.getElementById('productGrid').innerHTML=list.length?list.map(cardHTML).join(''):'<p>No products found. Try Dress, Kurti, Abaya...</p>';document.getElementById('shopGrid').innerHTML=list.map(cardHTML).join('');showPage('home')}
+function showPage(id){document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));document.getElementById(id).classList.add('active');window.scrollTo(0,0)}
+function addToCart(id){let p=products.find(x=>x.id===id);cart.push(p);updateCart();alert(p.name+' Added to Cart 🛒')}
+function updateCart(){document.getElementById('cartCount').innerText=cart.length;let total=cart.reduce((s,p)=>s+p.price,0);let final=total*(1-discount);document.getElementById('cartItems').innerHTML=cart.length?cart.map((p,i)=>`<p>${p.name} - ${fmt(p.price)} <span style="float:right;cursor:pointer" onclick="cart.splice(${i},1);updateCart()">✕</span></p>`).join(''):'<p>Cart is empty</p>';document.getElementById('cartTotal').innerText='Total: '+fmt(final)+(discount?' (10% OFF Applied)':'');let c=document.getElementById('currency').value;document.getElementById('shipInfo').innerText=c==='AED'?'Shipping: AED 20 - Next Day Dubai | Free over AED 300':c==='GBP'?'Shipping: £4.99 - 3-5 Days UK | Free over £60':'Shipping: $5.99 - 3-5 Days USA | Free over $75'}
+function toggleCart(){document.getElementById('cartDrawer').classList.toggle('open');updateCart()}
+function applyCoupon(){let v=document.getElementById('coupon').value.trim().toUpperCase();if(v==='WELCOME10'){discount=0.10;updateCart();alert('10% Discount Applied!')}else alert('Invalid Code. Try WELCOME10')}
+function checkout(){if(!cart.length)return alert('Cart is empty');alert('Demo Checkout: In real store this goes to Stripe / PayPal. Total: '+document.getElementById('cartTotal').innerText)}
+function buyWhatsApp(id){let p=products.find(x=>x.id===id);let msg=encodeURIComponent('Hi LUXE BOUTIQUE! I want to order: '+p.name+' - Price: '+fmt(p.price)+' - Size: M - Please confirm.');window.open('https://wa.me/971500000000?text='+msg,'_blank')}
+function orderWhatsApp(){if(!cart.length)return alert('Cart is empty');let txt='Hi LUXE BOUTIQUE! My Order:\n'+cart.map(p=>'- '+p.name+' '+fmt(p.price)).join('\n');window.open('https://wa.me/971500000000?text='+encodeURIComponent(txt),'_blank')}
+function openChat(){let b=document.getElementById('chatBox');b.style.display=b.style.display==='block'?'none':'block';if(b.style.display==='block'&&!document.getElementById('chatMsgs').innerHTML){addBot('Hi! I am Luxe AI Assistant ✨ I can answer 90% questions. Ask me: Price, Size, Shipping, Return, Suggest Dress...')}}
+function addBot(t){document.getElementById('chatMsgs').innerHTML+=`<div class="msg bot">${t}</div>`}
+function sendChat(){let inp=document.getElementById('chatText');let q=inp.value.trim();if(!q)return;document.getElementById('chatMsgs').innerHTML+=`<div class="msg me">${q}</div>`;inp.value='';let l=q.toLowerCase();setTimeout(()=>{if(l.includes('price')||l.includes('cost')||l.includes('discount'))addBot('Our prices are $25 - $139. Use Code WELCOME10 for 10% OFF! Which product? Black Dress $89, Abaya $99, Kurti $49.');else if(l.includes('size')||l.includes('medium')||l.includes('large'))addBot('Size Guide: XS - XXL available. US Size: S = 4-6, M = 8-10, L = 12-14. Which product size do you need?');else if(l.includes('ship')||l.includes('deliver')||l.includes('usa')||l.includes('uk')||l.includes('dubai'))addBot('Shipping: USA 3-5 Days $5.99 (Free over $75), UK 3-5 Days £4.99 (Free over £60), Dubai Next Day AED 20 (Free over AED 300).');else if(l.includes('return')||l.includes('refund'))addBot('30 Days Easy Return! If you don\'t love it, we refund in 3 days. No questions.');else if(l.includes('order')||l.includes('track'))addBot('To track order, send your Order Number. Or Order via WhatsApp - green button on any product!');else if(l.includes('party')||l.includes('dress')||l.includes('suggest'))addBot('For Party: 1) Gold Party Dress $119 ⭐ 2) Black Luxury Dress $89 ⭐ 3) Peach Party Kurti $62. Which one do you like?');else if(l.includes('abaya')||l.includes('hijab')||l.includes('kurti'))addBot('Yes! We have Abaya $99-$139, Hijab $25-$39, Kurti $49-$62. Search upar search bar me likho - Abaya, Kurti, Hijab.');else if(l.includes('human')||l.includes('whatsapp')||l.includes('person'))addBot('Sure! Chat on WhatsApp: +971 50 000 0000 - Human will reply in 2 hours. Or click WhatsApp button on any product.');else addBot('Great question! Our Best Sellers: Black Dress $89, Beige Abaya $99, Silk Hijab $29. Ask me about Price, Size, Shipping, Return - I answer instantly!');document.getElementById('chatMsgs').scrollTop=9999},400)},false)}
+document.getElementById('chatText').addEventListener('keypress',e=>{if(e.key==='Enter')sendChat()});
+renderProducts();
+</script>
+</body>
+</html>
