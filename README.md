@@ -1,22 +1,30 @@
-# LUXE BOUTIQUE ✨
+# Maison Noor - Luxury Boutique Store
 
-Premium Multi-Page Fashion Store for USA | UK | Dubai
+A premium multi-page boutique store demo with worldwide checkout, built to run on GitHub Pages.
 
 ## Features
-- 6 Pages: Home, Shop, Product, About, Reviews, Contact
-- Live Search Bar + Filters + Sort
-- 24 Products with Cart, Wishlist, Discount Code
-- Checkout: Stripe + PayPal + Apple Pay
-- WhatsApp Order on Every Product
-- Currency: USD / AED / GBP
-- AI Chatbot - Answers 90% Questions - Price, Size, Shipping, Return
-- Shipping: USA 3-5 Days, UK 3-5 Days, Dubai Next Day
-- 30 Days Easy Return
-- Mobile Perfect + Fast
+- 9 pages: Home, Shop, Category, Product, Wishlist, Cart, Checkout, About, Contact
+- 8 products with search, sorting, size selection and wishlist
+- Discount codes and free-shipping threshold
+- Currencies: USD, EUR, GBP, AED, PKR
+- Payment options: card, PayPal, Apple Pay / Google Pay, bank transfer, cash on delivery
+- Smart chat assistant for shipping, returns, sizes, payment and product questions
+- WhatsApp contact button
+- Mobile-first, fast, no frameworks
 
 ## Live Demo
-https://[tumhara-username].github.io/luxeboutique/
+https://luxestorepk.github.io/luxe-boutique-int/
+
+## Files
+- index.html - page structure and design
+- app.js - store, cart and checkout
+- bot.js - chat assistant
+- product photos (.jpg) in the same folder
+
+## Setup
+1. Upload all files to one GitHub repository.
+2. Settings > Pages > Deploy from branch > main > / (root).
+3. Open the link GitHub shows after a minute or two.
 
 ## Contact
-Email: hikayatesafaofficial1@gmail.com
-WhatsApp: +92 3716649232
+Message us through the WhatsApp button on the website.
