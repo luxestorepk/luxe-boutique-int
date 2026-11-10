@@ -29,7 +29,7 @@ let cur = ls('cur','USD'), cart = ls('cart',{}), wish = ls('wish',[]), coupon = 
 
 const money = usd => CONFIG.symbols[cur] + (usd * CONFIG.rates[cur]).toFixed(cur==='PKR'?0:2).replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 const byId = id => PRODUCTS.find(p => p.id === id);
-const img = p => `<img src="images/${p.id}.jpg" alt="${p.name}" loading="lazy" onerror="ph(this,'${p.name.replace(/'/g,'')}')">`;
+const img = p => `<img src="${p.id}.jpg" alt="${p.name}" loading="lazy" onerror="ph(this,'${p.name.replace(/'/g,'')}')">`;
 function ph(el, name){ el.outerHTML = `<div class="ph">${name}</div>`; }
 function toast(m){ const t=$('#toast'); t.textContent=m; t.classList.add('show'); setTimeout(()=>t.classList.remove('show'),2000); }
 
@@ -171,4 +171,4 @@ function route(){
 $('#cur').innerHTML = Object.keys(CONFIG.rates).map(c=>`<option ${c===cur?'selected':''}>${c}</option>`).join('');
 window.addEventListener('hashchange', route);
 badges(); route();
-        
+  
