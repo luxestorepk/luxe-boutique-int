@@ -10,74 +10,59 @@
         *{box-sizing:border-box;margin:0;padding:0;font-family:'Plus Jakarta Sans',sans-serif}
         body{background:var(--white);color:var(--black);line-height:1.6}
         h1,h2,h3,h4{font-family:'Playfair Display',serif}
-        .announcement{background:var(--black);color:var(--gold-btn);text-align:center;font-size:13px;padding:8px 15px;font-weight:600}
-        header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:15px 5%}
-        .logo{font-size:24px;font-weight:700;cursor:pointer}
+        .announcement{background:var(--black);color:var(--gold-btn);text-align:center;font-size:13px;padding:9px 15px;font-weight:600;letter-spacing:0.5px}
+        header{position:sticky;top:0;z-index:100;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:15px 5%;box-shadow:0 2px 10px rgba(0,0,0,0.03)}
+        .logo{font-size:24px;font-weight:700;cursor:pointer;letter-spacing:1px}
         .logo span{color:var(--gold)}
         .nav-links{display:flex;gap:25px;list-style:none}
-        .nav-links a{text-decoration:none;color:var(--black);font-weight:600;font-size:14px;cursor:pointer}
+        .nav-links a{text-decoration:none;color:var(--black);font-weight:600;font-size:14px;cursor:pointer;transition:color 0.2s}
         .nav-links a:hover,.nav-links a.active{color:var(--gold)}
         .actions{display:flex;align-items:center;gap:12px}
         .search-box{display:flex;border:1px solid var(--border);border-radius:4px;overflow:hidden}
-        .search-box input{padding:6px 10px;border:none;outline:none;font-size:13px;width:140px}
-        .search-box button{background:var(--black);color:var(--white);border:none;padding:0 10px;cursor:pointer}
-        .select-box{padding:6px;border:1px solid var(--border);border-radius:4px;font-size:13px;background:var(--white)}
-        .cart-btn{background:var(--black);color:var(--white);border:none;padding:8px 14px;border-radius:4px;font-weight:600;cursor:pointer}
-        .page{display:none;min-height:70vh}
+        .search-box input{padding:7px 12px;border:none;outline:none;font-size:13px;width:150px}
+        .search-box button{background:var(--black);color:var(--white);border:none;padding:0 12px;cursor:pointer;font-size:13px}
+        .select-box{padding:7px 10px;border:1px solid var(--border);border-radius:4px;font-size:13px;background:var(--white);font-weight:600;cursor:pointer}
+        .cart-btn{background:var(--black);color:var(--white);border:none;padding:8px 16px;border-radius:4px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:13px}
+        .page{display:none;min-height:75vh}
         .page.active{display:block}
-        .hero{background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover;color:var(--white);text-align:center;padding:90px 20px}
-        .hero h1{font-size:40px;max-width:850px;margin:0 auto 20px}
-        .hero p{font-size:17px;max-width:650px;margin:0 auto 25px}
-        .btn-gold{background:var(--gold-btn);color:var(--black);padding:12px 26px;border-radius:4px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block}
-        .btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);padding:12px 26px;border-radius:4px;font-weight:700;cursor:pointer}
-        .trust-box{background:rgba(255,255,255,0.1);padding:12px 20px;border-radius:8px;display:inline-flex;gap:15px;margin-top:25px;font-size:13px;flex-wrap:wrap;justify-content:center}
-        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:40px 5%;background:var(--light-grey);border-bottom:1px solid var(--border)}
-        .feature-card{background:var(--white);padding:20px;border-radius:8px;text-align:center;border:1px solid var(--border)}
-        .container{max-width:1300px;margin:0 auto;padding:40px 20px}
-        .sec-title{text-align:center;font-size:30px;margin-bottom:8px}
-        .sec-sub{text-align:center;color:#666;margin-bottom:30px;font-size:14px}
-        .filters{display:flex;justify-content:space-between;align-items:center;background:var(--light-grey);padding:15px;border-radius:8px;margin-bottom:25px;flex-wrap:wrap;gap:10px}
-        .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+        .hero{background:linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1600&q=80') center/cover;color:var(--white);text-align:center;padding:110px 20px}
+        .hero h1{font-size:42px;max-width:900px;margin:0 auto 20px;line-height:1.2}
+        .hero p{font-size:17px;max-width:700px;margin:0 auto 25px;color:#f3f3f3}
+        .btn-gold{background:var(--gold-btn);color:var(--black);padding:14px 28px;border-radius:4px;font-weight:700;border:none;cursor:pointer;text-decoration:none;display:inline-block;font-size:14px;transition:opacity 0.2s}
+        .btn-gold:hover{opacity:0.9}
+        .btn-outline{background:transparent;color:var(--white);border:2px solid var(--white);padding:14px 28px;border-radius:4px;font-weight:700;cursor:pointer;font-size:14px;transition:all 0.2s}
+        .btn-outline:hover{background:var(--white);color:var(--black)}
+        .trust-box{background:rgba(255,255,255,0.12);backdrop-filter:blur(10px);padding:14px 25px;border-radius:8px;display:inline-flex;gap:20px;margin-top:30px;font-size:13px;flex-wrap:wrap;justify-content:center;border:1px solid rgba(255,255,255,0.2)}
+        .features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:50px 5%;background:var(--light-grey);border-bottom:1px solid var(--border)}
+        .feature-card{background:var(--white);padding:25px;border-radius:8px;text-align:center;border:1px solid var(--border)}
+        .feature-card h4{margin-bottom:8px;font-size:16px}
+        .feature-card p{font-size:13px;color:#666}
+        .container{max-width:1300px;margin:0 auto;padding:45px 20px}
+        .sec-title{text-align:center;font-size:32px;margin-bottom:8px}
+        .sec-sub{text-align:center;color:#666;margin-bottom:35px;font-size:15px}
+        .filters{display:flex;justify-content:space-between;align-items:center;background:var(--light-grey);padding:15px 20px;border-radius:8px;margin-bottom:30px;flex-wrap:wrap;gap:15px;border:1px solid var(--border)}
+        .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:25px}
         @media(max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}.nav-links{display:none}}
-        .p-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;position:relative}
-        .p-img{height:210px;position:relative;background:#eee}
+        .p-card{background:var(--white);border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;position:relative;transition:transform 0.2s,box-shadow 0.2s}
+        .p-card:hover{transform:translateY(-4px);box-shadow:0 10px 25px rgba(0,0,0,0.08)}
+        .p-img{height:220px;position:relative;background:#f0f0f0}
         .p-img img{width:100%;height:100%;object-fit:cover}
-        .badge{position:absolute;top:10px;left:10px;background:var(--black);color:var(--white);font-size:9px;font-weight:700;padding:3px 6px;border-radius:3px}
-        .p-body{padding:15px;display:flex;flex-direction:column;flex-grow:1}
-        .p-cat{font-size:10px;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:4px}
-        .p-name{font-size:14px;font-weight:600;margin-bottom:6px;height:40px;overflow:hidden}
-        .p-price{display:flex;gap:8px;align-items:center;margin-bottom:10px}
-        .cur-price{font-size:15px;font-weight:700}
-        .old-price{font-size:12px;color:#888;text-decoration:line-through}
-        .p-actions{display:grid;grid-template-columns:1fr 38px;gap:6px;margin-top:auto}
-        .btn-cart{background:var(--black);color:var(--white);border:none;padding:8px;border-radius:4px;font-weight:600;font-size:12px;cursor:pointer}
-        .btn-wa{background:var(--whatsapp);color:var(--white);border:none;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px}
-        .cart-drawer{position:fixed;top:0;right:-400px;width:100%;max-width:380px;height:100%;background:var(--white);z-index:201;box-shadow:-5px 0 20px rgba(0,0,0,0.1);transition:right 0.3s;display:flex;flex-direction:column}
-        .cart-drawer.open{right:0}
-        .cart-head{padding:20px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
-        .cart-body{flex-grow:1;overflow-y:auto;padding:20px}
-        .cart-item{display:flex;gap:12px;margin-bottom:15px;padding-bottom:15px;border-bottom:1px solid var(--border);align-items:center}
-        .cart-item img{width:50px;height:60px;object-fit:cover;border-radius:4px}
-        .cart-foot{padding:20px;background:var(--light-grey);border-top:1px solid var(--border)}
-        .modal{position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:300;display:none;align-items:center;justify-content:center;padding:15px}
-        .modal-content{background:var(--white);width:100%;max-width:500px;border-radius:8px;padding:25px;position:relative;max-height:90vh;overflow-y:auto}
-        .f-group{margin-bottom:12px}
-        .f-group label{display:block;font-size:12px;font-weight:600;margin-bottom:4px}
-        .f-control{width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:4px;font-size:13px}
-        .ai-btn{position:fixed;bottom:20px;right:20px;background:var(--black);color:var(--white);border:2px solid var(--gold);padding:10px 18px;border-radius:25px;font-weight:700;cursor:pointer;z-index:150;box-shadow:0 4px 12px rgba(0,0,0,0.2)}
-        .chat-box{position:fixed;bottom:75px;right:20px;width:340px;height:460px;background:var(--white);border:1px solid var(--border);border-radius:10px;z-index:151;display:none;flex-direction:column;box-shadow:0 8px 25px rgba(0,0,0,0.15)}
-        .chat-msgs{flex-grow:1;padding:12px;overflow-y:auto;background:var(--light-grey);display:flex;flex-direction:column;gap:8px;font-size:12px}
-        .c-msg{max-width:85%;padding:8px 10px;border-radius:6px;line-height:1.4}
-        .c-msg.bot{background:var(--white);border:1px solid var(--border);align-self:flex-start}
-        .c-msg.user{background:var(--black);color:var(--white);align-self:flex-end}
-        footer{background:var(--black);color:var(--white);padding:50px 5% 25px;margin-top:60px;border-top:3px solid var(--gold)}
-        .footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:30px;font-size:13px;color:#ccc}
-        .footer-grid h4{color:var(--gold-btn);margin-bottom:15px;font-size:15px}
+        .badge{position:absolute;top:10px;left:10px;background:var(--black);color:var(--white);font-size:10px;font-weight:700;padding:4px 8px;border-radius:3px;letter-spacing:0.5px}
+        .p-body{padding:16px;display:flex;flex-direction:column;flex-grow:1}
+        .p-cat{font-size:11px;font-weight:700;color:var(--gold);text-transform:uppercase;margin-bottom:5px;letter-spacing:0.5px}
+        .p-name{font-size:15px;font-weight:600;margin-bottom:8px;height:42px;overflow:hidden;color:var(--black)}
+        .p-price{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+        .cur-price{font-size:16px;font-weight:700;color:var(--black)}
+        .old-price{font-size:13px;color:#888;text-decoration:line-through}
+        .p-actions{display:grid;grid-template-columns:1fr 40px;gap:8px;margin-top:auto}
+        .btn-cart{background:var(--black);color:var(--white);border:none;padding:10px;border-radius:4px;font-weight:600;font-size:12px;cursor:pointer;transition:background 0.2s}
+        .btn-cart:hover{background:#333}
+        .btn-wa{background:var(--whatsapp);color:var(--white);border:none;border-radius:4px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px}
     </style>
 </head>
 <body>
 
-    <div class="announcement">✨ International Express Shipping to USA, UK & Dubai • Use Code: WELCOME10 for 10% Off ✨</div>
+    <div class="announcement">✨ International Express Shipping to USA, UK & Dubai • Free Shipping Over $75 / £60 / AED 300 • Code: WELCOME10 ✨</div>
 
     <header>
         <div class="logo" onclick="showPage('home')">LUXE<span>BOUTIQUE</span></div>
@@ -90,7 +75,7 @@
         </ul>
         <div class="actions">
             <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search..." oninput="doSearch()">
+                <input type="text" id="searchInput" placeholder="Search luxury..." oninput="doSearch()">
                 <button onclick="doSearch()">🔍</button>
             </div>
             <select class="select-box" id="currSel" onchange="changeCurr(this.value)">
@@ -106,43 +91,42 @@
     <section id="page-home" class="page-section active">
         <div class="hero">
             <h1>Wear Luxury. Shop Premium Fashion USA • UK • Dubai</h1>
-            <p>24 Premium Products • Secure Checkout • AI Assistant ready 24/7</p>
-            <div style="display:flex; gap:12px; justify-content:center; flex-wrap:wrap;">
+            <p>24 Premium Products • Secure International Checkout • AI Assistant Ready 24/7</p>
+            <div style="display:flex; gap:15px; justify-content:center; flex-wrap:wrap;">
                 <button class="btn-gold" onclick="showPage('shop')">SHOP NOW →</button>
                 <button class="btn-outline" onclick="toggleChat()">Ask AI Assistant</button>
             </div>
             <div class="trust-box">
                 <span>⭐ 4.9/5 Rating</span>
-                <span>🛍️ 2,300+ Customers</span>
-                <span>✈️ USA • UK • Dubai</span>
-                <span>🔒 Secure Checkout</span>
+                <span>🛍️ 2,300+ Happy Customers</span>
+                <span>✈️ Trusted in USA, UK & Dubai</span>
+                <span>🔒 Visa • Mastercard • PayPal</span>
             </div>
         </div>
 
         <div class="features">
-            <div class="feature-card"><h4>Fast Shipping</h4><p>Express courier across USA, UK & Dubai.</p></div>
-            <div class="feature-card"><h4>Secure Payments</h4><p>Visa, Mastercard, PayPal & WhatsApp.</p></div>
-            <div class="feature-card"><h4>30 Days Return</h4><p>Easy refunds and item exchanges.</p></div>
-            <div class="feature-card"><h4>24/7 AI Support</h4><p>Instant answers and founder assistance.</p></div>
+            <div class="feature-card"><h4>International Express</h4><p>Fast delivery across USA, UK & Dubai with full tracking.</p></div>
+            <div class="feature-card"><h4>Secure Payments</h4><p>Encrypted checkout via Visa, Mastercard, PayPal & WhatsApp.</p></div>
+            <div class="feature-card"><h4>30 Days Return</h4><p>Hassle-free 30 day return and exchange policy guaranteed.</p></div>
+            <div class="feature-card"><h4>24/7 AI & WhatsApp</h4><p>Instant answers from AI or talk directly to founder Hika Yatesaf.</p></div>
         </div>
 
         <div class="container">
-            <h2 class="sec-title">Best Sellers Collection</h2>
-            <p class="sec-sub">Curated luxury wear for the modern global wardrobe.</p>
+            <h2 class="sec-title">Best Sellers & Featured Collection</h2>
+            <p class="sec-sub">Handpicked luxury wear crafted for the modern global wardrobe.</p>
             <div class="grid" id="bestGrid"></div>
-            <div style="text-align:center; margin-top:35px;">
+            <div style="text-align:center; margin-top:40px;">
                 <button class="btn-gold" onclick="showPage('shop')">View All 24 Products →</button>
             </div>
         </div>
     </section>
-
-    <!-- SHOP PAGE -->
+        <!-- SHOP PAGE -->
     <section id="page-shop" class="page-section">
         <div class="container">
             <h2 class="sec-title">Complete Luxury Catalog</h2>
-            <p class="sec-sub">All 24 premium pieces tailored for international elegance.</p>
+            <p class="sec-sub">Explore all 24 premium pieces tailored for international elegance.</p>
             <div class="filters">
-                <div style="display:flex; gap:10px; flex-wrap:wrap;">
+                <div style="display:flex; gap:12px; flex-wrap:wrap;">
                     <select id="catF" class="select-box" onchange="filterProds()">
                         <option value="All">All Categories</option>
                         <option value="Dresses">Dresses</option>
@@ -165,25 +149,29 @@
                 </select>
             </div>
             <div class="grid" id="shopGrid"></div>
-            <div id="noRes" style="text-align:center; padding:40px; display:none; color:#666;">No products found. Try Dress, Kurti, Abaya...</div>
+            <div id="noRes" style="text-align:center; padding:50px; display:none; color:#666; font-size:16px;">No products found. Try Dress, Kurti, Abaya...</div>
         </div>
     </section>
 
     <!-- ABOUT PAGE -->
     <section id="page-about" class="page-section">
-        <div class="container" style="max-width:850px;">
+        <div class="container" style="max-width:900px;">
             <h2 class="sec-title">About Luxe Boutique</h2>
-            <p class="sec-sub">Led by Hika Yatesaf</p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; align-items:center; margin-bottom:40px;">
+            <p class="sec-sub">Redefining international elegance under the leadership of Hika Yatesaf.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; align-items:center; margin-bottom:50px;">
                 <div>
-                    <p style="font-size:14px; color:#444; margin-bottom:12px;">Founded by Hika Yatesaf, Luxe Boutique unites modesty with international couture. Serving New York, London, and Dubai with top-tier fabrics and timeless designs.</p>
-                    <p style="font-size:14px; color:#444;">We provide direct customer care via WhatsApp and intelligent AI assistance for a seamless shopping experience.</p>
+                    <h3 style="margin-bottom:15px; font-size:22px;">Our Story & Vision</h3>
+                    <p style="font-size:14px; color:#444; margin-bottom:15px;">Founded by Hika Yatesaf, Luxe Boutique was born out of a passion for uniting traditional modesty with modern international haute couture. From New York and London to Dubai, our collections represent uncompromised quality and timeless design.</p>
+                    <p style="font-size:14px; color:#444;">We offer dedicated customer care via WhatsApp and intelligent AI assistance 24/7.</p>
                 </div>
-                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" style="width:100%; border-radius:8px; height:300px; object-fit:cover;" alt="Store">
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=800&q=80" style="width:100%; border-radius:8px; height:350px; object-fit:cover;" alt="Store">
             </div>
-            <div style="background:var(--light-grey); padding:25px; border-radius:8px; border:1px solid var(--border);">
-                <h3>Shipping & Return Policy</h3>
-                <p style="font-size:13px; color:#555; margin-top:8px;">• <strong>USA:</strong> 3-5 days via DHL/FedEx (Free > $75)<br>• <strong>UK:</strong> 3-5 days across UK (Free > £60)<br>• <strong>Dubai/UAE:</strong> Next-day express (Free > AED 300)<br>• <strong>Returns:</strong> 30-day easy return window.</p>
+            <div style="background:var(--light-grey); padding:30px; border-radius:8px; border:1px solid var(--border);">
+                <h3 style="margin-bottom:15px;">Shipping & Return Policy</h3>
+                <p style="font-size:14px; color:#444; margin-bottom:10px;"><strong>USA Orders:</strong> 3-5 business days via DHL/FedEx. Free shipping over $75.</p>
+                <p style="font-size:14px; color:#444; margin-bottom:10px;"><strong>UK Orders:</strong> 3-5 business days across England, Scotland & Wales. Free shipping over £60.</p>
+                <p style="font-size:14px; color:#444; margin-bottom:10px;"><strong>Dubai / UAE Orders:</strong> Next-day express delivery across Dubai, Abu Dhabi & Sharjah. Free shipping over AED 300.</p>
+                <p style="font-size:14px; color:#444;"><strong>Returns:</strong> 30 days easy return window for unworn items in original packaging.</p>
             </div>
         </div>
     </section>
@@ -192,27 +180,27 @@
     <section id="page-reviews" class="page-section">
         <div class="container" style="max-width:900px;">
             <h2 class="sec-title">Customer Reviews (4.9/5)</h2>
-            <p class="sec-sub">Verified feedback worldwide</p>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; margin-top:20px;">
-                <div style="background:var(--light-grey); padding:20px; border-radius:8px; border:1px solid var(--border);">
-                    <div style="color:var(--gold); margin-bottom:8px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size:13px; font-style:italic; margin-bottom:10px;">"The black evening dress I ordered for my New York gala was breathtaking! Fits like a glove."</p>
-                    <strong>— Sarah, New York USA</strong>
+            <p class="sec-sub">Read verified feedback from our cherished clients across the globe.</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:20px; margin-top:30px;">
+                <div style="background:var(--light-grey); padding:25px; border-radius:8px; border:1px solid var(--border);">
+                    <div style="color:var(--gold); margin-bottom:10px; font-size:14px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size:14px; font-style:italic; margin-bottom:15px; color:#444;">"The black evening dress I ordered for my New York gala was breathtaking! Premium fabric and fit like a glove."</p>
+                    <strong style="font-size:13px;">— Sarah, New York USA</strong>
                 </div>
-                <div style="background:var(--light-grey); padding:20px; border-radius:8px; border:1px solid var(--border);">
-                    <div style="color:var(--gold); margin-bottom:8px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size:13px; font-style:italic; margin-bottom:10px;">"Absolute favorite abaya collection in Dubai. Impeccable gold embroidery and fast delivery."</p>
-                    <strong>— Aisha, Dubai UAE</strong>
+                <div style="background:var(--light-grey); padding:25px; border-radius:8px; border:1px solid var(--border);">
+                    <div style="color:var(--gold); margin-bottom:10px; font-size:14px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size:14px; font-style:italic; margin-bottom:15px; color:#444;">"Absolute favorite abaya collection in Dubai. Impeccable gold embroidery and lightning-fast delivery right to my door."</p>
+                    <strong style="font-size:13px;">— Aisha, Dubai UAE</strong>
                 </div>
-                <div style="background:var(--light-grey); padding:20px; border-radius:8px; border:1px solid var(--border);">
-                    <div style="color:var(--gold); margin-bottom:8px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size:13px; font-style:italic; margin-bottom:10px;">"Ordered chiffon hijabs for London weather. Super soft, doesn't slip, wonderfully luxurious."</p>
-                    <strong>— Fatima, London UK</strong>
+                <div style="background:var(--light-grey); padding:25px; border-radius:8px; border:1px solid var(--border);">
+                    <div style="color:var(--gold); margin-bottom:10px; font-size:14px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size:14px; font-style:italic; margin-bottom:15px; color:#444;">"Ordered a chiffon hijab pack for London weather. Super soft, doesn't slip, and looks wonderfully luxurious."</p>
+                    <strong style="font-size:13px;">— Fatima, London UK</strong>
                 </div>
-                <div style="background:var(--light-grey); padding:20px; border-radius:8px; border:1px solid var(--border);">
-                    <div style="color:var(--gold); margin-bottom:8px;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-size:13px; font-style:italic; margin-bottom:10px;">"Customer support via WhatsApp is phenomenal. Hika Yatesaf helped me pick the right size instantly."</p>
-                    <strong>— Emily, Los Angeles USA</strong>
+                <div style="background:var(--light-grey); padding:25px; border-radius:8px; border:1px solid var(--border);">
+                    <div style="color:var(--gold); margin-bottom:10px; font-size:14px;">⭐⭐⭐⭐⭐</div>
+                    <p style="font-size:14px; font-style:italic; margin-bottom:15px; color:#444;">"Customer support via WhatsApp is phenomenal. Hika Yatesaf and team helped me pick the right size instantly."</p>
+                    <strong style="font-size:13px;">— Emily, Los Angeles USA</strong>
                 </div>
             </div>
         </div>
@@ -220,19 +208,21 @@
 
     <!-- CONTACT PAGE -->
     <section id="page-contact" class="page-section">
-        <div class="container" style="max-width:800px;">
+        <div class="container" style="max-width:900px;">
             <h2 class="sec-title">Contact & Support</h2>
-            <p class="sec-sub">Available 7 days a week</p>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:30px; background:var(--light-grey); padding:30px; border-radius:8px; border:1px solid var(--border);">
+            <p class="sec-sub">We are here to help you 7 days a week.</p>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:40px; background:var(--light-grey); padding:35px; border-radius:8px; border:1px solid var(--border);">
                 <div>
-                    <p style="margin-bottom:10px;"><strong>Owner:</strong> Hika Yatesaf</p>
-                    <p style="margin-bottom:10px;"><strong>Email:</strong> hikayatesafaofficial1@gmail.com</p>
-                    <p style="margin-bottom:10px;"><strong>WhatsApp:</strong> +92 371 6649231</p>
-                    <p><strong>Hours:</strong> 9 AM – 9 PM Dubai Time</p>
+                    <h3 style="margin-bottom:20px; font-size:20px;">Get in Touch</h3>
+                    <p style="margin-bottom:12px; font-size:14px;"><strong>Owner:</strong> Hika Yatesaf</p>
+                    <p style="margin-bottom:12px; font-size:14px;"><strong>Email:</strong> hikayatesafaofficial1@gmail.com</p>
+                    <p style="margin-bottom:12px; font-size:14px;"><strong>WhatsApp:</strong> +92 371 6649231</p>
+                    <p style="margin-bottom:12px; font-size:14px;"><strong>Hours:</strong> 9 AM – 9 PM Dubai Time (GMT+4)</p>
+                    <p style="font-size:14px;"><strong>Hubs:</strong> New York, London, Dubai</p>
                 </div>
-                <div style="display:flex; flex-direction:column; justify-content:center; gap:12px;">
-                    <button class="btn-gold" onclick="toggleChat()">💬 Open AI Assistant</button>
-                    <a href="https://wa.me/923716649231" target="_blank" style="background:var(--whatsapp); color:var(--white); padding:12px; border-radius:4px; font-weight:700; text-align:center; text-decoration:none;">💬 Chat on WhatsApp</a>
+                <div style="display:flex; flex-direction:column; justify-content:center; gap:15px;">
+                    <button class="btn-gold" style="padding:16px; font-size:15px; text-align:center;" onclick="toggleChat()">💬 Chat with AI Assistant</button>
+                    <a href="https://wa.me/923716649231" target="_blank" style="background:var(--whatsapp); color:var(--white); padding:16px; border-radius:4px; font-weight:700; text-align:center; text-decoration:none; font-size:15px;">💬 Chat on WhatsApp Now</a>
                 </div>
             </div>
         </div>
@@ -240,117 +230,125 @@
 
     <!-- Cart Drawer -->
     <div id="cartOverlay" onclick="toggleCart()" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:200; display:none;"></div>
-    <div class="cart-drawer" id="cartDrawer">
-        <div class="cart-head">
-            <h3>Your Shopping Bag</h3>
-            <button onclick="toggleCart()" style="background:none;border:none;font-size:20px;cursor:pointer;">✕</button>
+    <div class="cart-drawer" id="cartDrawer" style="position:fixed; top:0; right:-400px; width:100%; max-width:400px; height:100%; background:var(--white); z-index:201; box-shadow:-5px 0 25px rgba(0,0,0,0.15); transition:right 0.3s ease; display:flex; flex-direction:column;">
+        <div style="padding:20px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center;">
+            <h3 style="font-size:18px;">Your Shopping Bag</h3>
+            <button onclick="toggleCart()" style="background:none;border:none;font-size:22px;cursor:pointer;">✕</button>
         </div>
-        <div class="cart-body" id="cartItems"></div>
-        <div class="cart-foot">
-            <div style="display:flex; gap:8px; margin-bottom:12px;">
-                <input type="text" id="coupon" placeholder="Code: WELCOME10" style="flex-grow:1; padding:6px 10px; border:1px solid var(--border); border-radius:4px; font-size:12px;">
-                <button onclick="applyCoupon()" style="background:var(--black); color:var(--white); border:none; padding:6px 12px; border-radius:4px; font-weight:600; cursor:pointer; font-size:12px;">Apply</button>
+        <div style="flex-grow:1; overflow-y:auto; padding:20px;" id="cartItems"></div>
+        <div style="padding:20px; background:var(--light-grey); border-top:1px solid var(--border);">
+            <div style="display:flex; gap:10px; margin-bottom:15px;">
+                <input type="text" id="coupon" placeholder="Code: WELCOME10" style="flex-grow:1; padding:8px 12px; border:1px solid var(--border); border-radius:4px; font-size:13px;">
+                <button onclick="applyCoupon()" style="background:var(--black); color:var(--white); border:none; padding:8px 15px; border-radius:4px; font-weight:600; cursor:pointer; font-size:13px;">Apply</button>
             </div>
-            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px;"><span>Subtotal:</span><span id="subTotal">$0.00</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:13px; margin-bottom:6px; color:var(--gold); display:none;" id="discRow"><span>Discount:</span><span id="discAmt">$0.00</span></div>
-            <div style="display:flex; justify-content:space-between; font-size:15px; font-weight:700; border-top:1px solid var(--border); padding-top:8px; margin-top:8px;"><span>Total:</span><span id="finalTotal">$0.00</span></div>
-            <button class="btn-gold" style="width:100%; margin-top:12px; padding:10px; text-align:center;" onclick="openCheckout()">Secure Checkout</button>
-            <a href="#" id="waCartBtn" onclick="orderWA()" style="display:block; background:var(--whatsapp); color:var(--white); text-align:center; padding:10px; border-radius:4px; font-weight:700; margin-top:8px; text-decoration:none; font-size:13px;">💬 Order via WhatsApp</a>
+            <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px;"><span>Subtotal:</span><span id="subTotal">$0.00</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:14px; margin-bottom:8px; color:var(--gold); display:none;" id="discRow"><span>Discount (10%):</span><span id="discAmt">$0.00</span></div>
+            <div style="display:flex; justify-content:space-between; font-size:16px; font-weight:700; border-top:1px solid var(--border); padding-top:10px; margin-top:8px;"><span>Total:</span><span id="finalTotal">$0.00</span></div>
+            <button class="btn-gold" style="width:100%; margin-top:15px; padding:13px; text-align:center;" onclick="openCheckout()">Proceed to Secure Checkout</button>
+            <a href="#" onclick="orderWA()" style="display:block; background:var(--whatsapp); color:var(--white); text-align:center; padding:13px; border-radius:4px; font-weight:700; margin-top:10px; text-decoration:none; font-size:14px;">💬 Order via WhatsApp</a>
         </div>
     </div>
-    <!-- Checkout Modal -->
-    <div class="modal" id="checkoutModal">
-        <div class="modal-content">
-            <button onclick="document.getElementById('checkoutModal').style.display='none'" style="position:absolute; top:15px; right:15px; background:none; border:none; font-size:20px; cursor:pointer;">✕</button>
-            <h2 style="margin-bottom:15px; font-size:20px;">Secure Checkout</h2>
+        <!-- Checkout Modal -->
+    <div class="modal" id="checkoutModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:300; display:none; align-items:center; justify-content:center; padding:20px;">
+        <div class="modal-content" style="background:var(--white); width:100%; max-width:550px; border-radius:8px; padding:30px; position:relative; max-height:90vh; overflow-y:auto;">
+            <button onclick="document.getElementById('checkoutModal').style.display='none'" style="position:absolute; top:15px; right:20px; background:none; border:none; font-size:24px; cursor:pointer;">✕</button>
+            <h2 style="margin-bottom:20px; font-size:24px;">Secure Checkout</h2>
             <div class="f-group"><label>Full Name *</label><input type="text" id="cName" class="f-control" placeholder="Hika Yatesaf"></div>
-            <div class="f-group"><label>Phone Number *</label><input type="text" id="cPhone" class="f-control" placeholder="+1 555 019 2834"></div>
-            <div class="f-group"><label>Email *</label><input type="email" id="cEmail" class="f-control" value="hikayatesafaofficial1@gmail.com"></div>
-            <div class="f-group"><label>Address *</label><input type="text" id="cAddress" class="f-control" placeholder="Street Address"></div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px;">
-                <div class="f-group"><label>City *</label><input type="text" id="cCity" class="f-control" placeholder="New York"></div>
+            <div class="f-group"><label>Phone Number (with country code) *</label><input type="text" id="cPhone" class="f-control" placeholder="+1 555 019 2834"></div>
+            <div class="f-group"><label>Email Address *</label><input type="email" id="cEmail" class="f-control" value="hikayatesafaofficial1@gmail.com"></div>
+            <div class="f-group"><label>Street Address *</label><input type="text" id="cAddress" class="f-control" placeholder="123 Luxury Ave, Apt 4B"></div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:15px;">
+                <div class="f-group"><label>City *</label><input type="text" id="cCity" class="f-control" placeholder="New York / London / Dubai"></div>
                 <div class="f-group"><label>Country *</label>
                     <select id="cCountry" class="f-control">
                         <option value="United States">United States</option>
                         <option value="United Kingdom">United Kingdom</option>
-                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Arab Emirates - Dubai">United Arab Emirates - Dubai</option>
                         <option value="Pakistan">Pakistan</option>
                         <option value="Other">Other</option>
                     </select>
                 </div>
             </div>
             <div class="f-group"><label>Payment Method</label>
-                <div style="font-size:13px; font-weight:600; padding:8px; background:var(--light-grey); border:1px solid var(--border); border-radius:4px;">
-                    <input type="radio" checked> Cash on Delivery / Pay on WhatsApp Link
+                <div style="font-size:14px; font-weight:600; padding:12px; background:var(--light-grey); border:1px solid var(--border); border-radius:4px;">
+                    <input type="radio" checked> Cash on Delivery / Pay on WhatsApp Secure Link
                 </div>
             </div>
-            <button class="btn-gold" style="width:100%; padding:12px; margin-top:10px;" onclick="confirmOrder()">Confirm & Place Order</button>
+            <button class="btn-gold" style="width:100%; padding:14px; margin-top:15px;" onclick="confirmOrder()">Confirm & Place Order</button>
         </div>
     </div>
 
     <!-- Success Modal -->
-    <div class="modal" id="successModal">
-        <div class="modal-content" style="text-align:center;">
-            <h2 style="color:var(--gold); margin-bottom:10px;">Order Placed Successfully! 🎉</h2>
-            <p id="succId" style="font-weight:700; margin-bottom:10px;"></p>
-            <p id="succSum" style="font-size:13px; color:#555; margin-bottom:20px;"></p>
-            <div style="display:flex; flex-direction:column; gap:10px;">
-                <button class="btn-gold" style="background:var(--whatsapp); color:var(--white);" onclick="sendSuccWA()">💬 Send Order on WhatsApp</button>
-                <button class="btn-gold" onclick="sendSuccEmail()">✉️ Send Order via Email</button>
-                <button class="btn-outline" style="background:var(--black); border:none; padding:10px;" onclick="location.reload()">Continue Shopping</button>
+    <div class="modal" id="successModal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.6); z-index:300; display:none; align-items:center; justify-content:center; padding:20px;">
+        <div class="modal-content" style="background:var(--white); width:100%; max-width:550px; border-radius:8px; padding:30px; position:relative; text-align:center;">
+            <h2 style="color:var(--gold); margin-bottom:10px; font-size:24px;">Order Placed Successfully! 🎉</h2>
+            <p id="succId" style="font-weight:700; font-size:16px; margin-bottom:15px;"></p>
+            <p id="succSum" style="font-size:14px; color:#555; margin-bottom:25px; line-height:1.6;"></p>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+                <button class="btn-gold" style="background:var(--whatsapp); color:var(--white); padding:14px;" onclick="sendSuccWA()">💬 Send Order on WhatsApp to Owner</button>
+                <button class="btn-gold" style="padding:14px;" onclick="sendSuccEmail()">✉️ Send Order via Email</button>
+                <button class="btn-outline" style="background:var(--black); border:none; padding:12px;" onclick="location.reload()">Continue Shopping</button>
             </div>
         </div>
     </div>
 
     <!-- AI Chat Assistant -->
-    <button class="ai-btn" onclick="toggleChat()">💬 AI Assistant</button>
-    <div class="chat-box" id="chatBox">
-        <div style="background:var(--black); color:var(--gold-btn); padding:12px; display:flex; justify-content:space-between; align-items:center; font-weight:600; font-size:13px;">
-            <span>💬 Luxe Assistant</span>
-            <button onclick="toggleChat()" style="background:none;border:none;color:#fff;cursor:pointer;font-size:16px;">✕</button>
+    <button class="ai-btn" onclick="toggleChat()" style="position:fixed; bottom:20px; right:20px; background:var(--black); color:var(--white); border:2px solid var(--gold); padding:12px 20px; border-radius:30px; font-weight:700; cursor:pointer; z-index:150; box-shadow:0 4px 15px rgba(0,0,0,0.2); display:flex; align-items:center; gap:8px; font-size:14px;">💬 Luxe AI Assistant</button>
+    <div class="chat-box" id="chatBox" style="position:fixed; bottom:80px; right:20px; width:360px; height:500px; background:var(--white); border:1px solid var(--border); border-radius:12px; z-index:151; display:none; flex-direction:column; box-shadow:0 10px 30px rgba(0,0,0,0.15); overflow:hidden;">
+        <div style="background:var(--black); color:var(--gold-btn); padding:15px; display:flex; justify-content:space-between; align-items:center; font-weight:600; font-size:15px;">
+            <span>💬 Luxe Assistant (90% Answers)</span>
+            <button onclick="toggleChat()" style="background:none;border:none;color:#fff;cursor:pointer;font-size:18px;">✕</button>
         </div>
-        <div class="chat-msgs" id="chatMsgs">
-            <div class="c-msg bot">Hello! Ask me about our 24 luxury products, prices, sizing, shipping to USA/UK/Dubai, or returns!</div>
+        <div class="chat-msgs" id="chatMsgs" style="flex-grow:1; padding:15px; overflow-y:auto; background:var(--light-grey); display:flex; flex-direction:column; gap:10px; font-size:13px;">
+            <div class="c-msg bot">Hello! I am your Luxe Assistant. Ask me anything about our 24 luxury products, prices, sizing for USA/UK/Dubai, shipping, or returns!</div>
         </div>
-        <div style="padding:8px; background:var(--white); border-top:1px solid var(--border); display:flex; gap:6px;">
-            <input type="text" id="chatIn" placeholder="Type a question..." style="flex-grow:1; padding:6px 10px; border:1px solid var(--border); border-radius:4px; font-size:12px; outline:none;" onkeydown="if(event.key==='Enter')sendChat()">
-            <button onclick="sendChat()" style="background:var(--black); color:var(--white); border:none; padding:0 12px; border-radius:4px; font-size:12px; cursor:pointer;">Send</button>
+        <div style="padding:8px 10px; background:var(--white); border-top:1px solid var(--border); display:flex; gap:6px; overflow-x:auto;">
+            <button onclick="quickAsk('What are your prices?')" style="background:var(--light-grey); border:1px solid var(--border); padding:5px 10px; border-radius:15px; font-size:11px; white-space:nowrap; cursor:pointer; font-weight:600;">Price?</button>
+            <button onclick="quickAsk('What size should I get?')" style="background:var(--light-grey); border:1px solid var(--border); padding:5px 10px; border-radius:15px; font-size:11px; white-space:nowrap; cursor:pointer; font-weight:600;">Size?</button>
+            <button onclick="quickAsk('Shipping rates for USA UK Dubai?')" style="background:var(--light-grey); border:1px solid var(--border); padding:5px 10px; border-radius:15px; font-size:11px; white-space:nowrap; cursor:pointer; font-weight:600;">Shipping?</button>
+            <button onclick="quickAsk('What is your return policy?')" style="background:var(--light-grey); border:1px solid var(--border); padding:5px 10px; border-radius:15px; font-size:11px; white-space:nowrap; cursor:pointer; font-weight:600;">Return?</button>
+        </div>
+        <div style="padding:10px; background:var(--white); border-top:1px solid var(--border); display:flex; gap:8px;">
+            <input type="text" id="chatIn" placeholder="Type a question..." style="flex-grow:1; padding:8px 12px; border:1px solid var(--border); border-radius:4px; font-size:13px; outline:none;" onkeydown="if(event.key==='Enter')sendChat()">
+            <button onclick="sendChat()" style="background:var(--black); color:var(--white); border:none; padding:0 15px; border-radius:4px; font-size:13px; cursor:pointer; font-weight:600;">Send</button>
         </div>
     </div>
 
     <footer>
-        <div class="footer-grid">
+        <div class="footer-grid" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:40px; margin-bottom:40px; font-size:13px; color:#ccc;">
             <div>
-                <h4>LUXE BOUTIQUE</h4>
-                <p>International fashion house managed by Hika Yatesaf.</p>
-                <p style="margin-top:8px;">Email: hikayatesafaofficial1@gmail.com</p>
-                <p>WhatsApp: +92 371 6649231</p>
+                <h4 style="color:var(--gold-btn); margin-bottom:20px; font-size:16px;">LUXE BOUTIQUE</h4>
+                <p>International fashion house delivering premium apparel to USA, UK, and Dubai.</p>
+                <p style="margin-top:15px;"><strong>Owner:</strong> Hika Yatesaf</p>
+                <p><strong>Email:</strong> hikayatesafaofficial1@gmail.com</p>
+                <p><strong>WhatsApp:</strong> +92 371 6649231</p>
             </div>
             <div>
-                <h4>Shop Categories</h4>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="catNav('Dresses')">Dresses</p>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="catNav('Kurtis')">Kurtis</p>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="catNav('Abayas')">Abayas</p>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="catNav('Hijab')">Hijab</p>
+                <h4 style="color:var(--gold-btn); margin-bottom:20px; font-size:16px;">Shop Categories</h4>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="catNav('Dresses')">Dresses</p>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="catNav('Kurtis')">Kurtis</p>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="catNav('Abayas')">Abayas</p>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="catNav('Hijab')">Hijab</p>
+                <p style="cursor:pointer;" onclick="catNav('Co-Ord Sets')">Co-Ord Sets</p>
             </div>
             <div>
-                <h4>Customer Care</h4>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="showPage('about')">Shipping & Returns</p>
-                <p style="cursor:pointer; margin-bottom:6px;" onclick="showPage('contact')">Contact Support</p>
+                <h4 style="color:var(--gold-btn); margin-bottom:20px; font-size:16px;">Customer Care</h4>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="showPage('about')">Shipping Policy</p>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="showPage('about')">30 Days Return</p>
+                <p style="cursor:pointer; margin-bottom:10px;" onclick="showPage('contact')">Track Order</p>
                 <p style="cursor:pointer;" onclick="toggleChat()">AI Assistant</p>
             </div>
             <div>
-                <h4>Secure & Trusted</h4>
-                <p style="color:var(--gold-btn); font-weight:600;">⭐ 4.9/5 Rating</p>
-                <p style="margin-top:6px;">Visa • Mastercard • PayPal • Apple Pay</p>
+                <h4 style="color:var(--gold-btn); margin-bottom:20px; font-size:16px;">Secure & Trusted</h4>
+                <p style="color:var(--gold-btn); font-weight:600;">⭐ 4.9/5 Rating (2,300+ Clients)</p>
+                <p style="margin-top:10px; color:#aaa;">Visa • Mastercard • PayPal • Apple Pay</p>
             </div>
         </div>
-        <div style="border-top:1px solid #222; padding-top:15px; text-align:center; font-size:11px; color:#888;">
-            &copy; 2026 LUXE BOUTIQUE. Managed by Hika Yatesaf. All Rights Reserved.
+        <div style="border-top:1px solid #222; padding-top:20px; text-align:center; font-size:12px; color:#888;">
+            &copy; 2026 LUXE BOUTIQUE. All Rights Reserved. Managed by Hika Yatesaf.
         </div>
     </footer>
-
-    <script>
+        <script>
         const products = [
             { id: 1, name: "Black Luxury Evening Dress", category: "Dresses", price: 89, old: 129, tag: "BEST SELLER", img: "https://images.unsplash.com/photo-1566174053879-31528523f8ae?w=600&q=80" },
             { id: 2, name: "Red Premium Kurti", category: "Kurtis", price: 49, old: 69, tag: "NEW", img: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?w=600&q=80" },
@@ -408,8 +406,9 @@
 
         function toggleCart() {
             let d = document.getElementById('cartDrawer');
-            d.classList.toggle('open');
-            document.getElementById('cartOverlay').style.display = d.classList.contains('open') ? 'block' : 'none';
+            let isOpen = d.style.right === '0px';
+            d.style.right = isOpen ? '-400px' : '0px';
+            document.getElementById('cartOverlay').style.display = isOpen ? 'none' : 'block';
         }
 
         function renderCard(p) {
@@ -417,17 +416,18 @@
                 <div class="p-card">
                     <div class="p-img">
                         ${p.tag ? `<span class="badge">${p.tag}</span>` : ''}
+                        <button style="position:absolute; top:10px; right:10px; background:#fff; border:none; width:30px; height:30px; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 5px rgba(0,0,0,0.1);" onclick="alert('Added to wishlist!')">♡</button>
                         <img src="${p.img}" alt="${p.name}" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=600&q=80'">
                     </div>
                     <div class="p-body">
                         <div class="p-cat">${p.category}</div>
                         <div class="p-name">${p.name}</div>
-                        <div style="font-size:11px; color:#666; margin-bottom:6px;">⭐⭐⭐⭐⭐ (214)</div>
+                        <div style="font-size:12px; color:#666; margin-bottom:6px;">⭐⭐⭐⭐⭐ (214)</div>
                         <div class="p-price">
                             <span class="cur-price">${fmt(p.price)}</span>
                             <span class="old-price">${fmt(p.old)}</span>
                         </div>
-                        <div style="font-size:10px; color:#555; margin-bottom:10px;">Size: XS-XXL • In Stock</div>
+                        <div style="font-size:11px; color:#555; margin-bottom:12px;">Size: XS-XXL • In Stock • Free Return</div>
                         <div class="p-actions">
                             <button class="btn-cart" onclick="addCart(${p.id})">Add to Cart</button>
                             <button class="btn-wa" onclick="buyWA(${p.id})" title="Order on WhatsApp">💬</button>
@@ -496,16 +496,16 @@
             document.getElementById('cartCount').textContent = cart.reduce((s, i) => s + i.qty, 0);
             let box = document.getElementById('cartItems');
             if(cart.length === 0) {
-                box.innerHTML = '<p style="text-align:center; color:#777; margin-top:30px;">Your cart is empty.</p>';
+                box.innerHTML = '<p style="text-align:center; color:#777; margin-top:40px;">Your cart is empty.</p>';
             } else {
                 box.innerHTML = cart.map(i => `
-                    <div class="cart-item">
-                        <img src="${i.img}">
+                    <div style="display:flex; gap:12px; margin-bottom:15px; padding-bottom:15px; border-bottom:1px solid var(--border); align-items:center;">
+                        <img src="${i.img}" style="width:60px; height:70px; object-fit:cover; border-radius:4px;">
                         <div style="flex-grow:1;">
-                            <div style="font-size:12px; font-weight:600;">${i.name}</div>
-                            <div style="font-size:12px; color:var(--gold); font-weight:700;">${fmt(i.price)} × ${i.qty}</div>
+                            <div style="font-size:13px; font-weight:600; margin-bottom:4px;">${i.name}</div>
+                            <div style="font-size:13px; color:var(--gold); font-weight:700;">${fmt(i.price)} × ${i.qty}</div>
                         </div>
-                        <button onclick="removeCart(${i.id})" style="background:none;border:none;color:#999;cursor:pointer;">✕</button>
+                        <button onclick="removeCart(${i.id})" style="background:none;border:none;color:#999;cursor:pointer;font-size:16px;">✕</button>
                     </div>
                 `).join('');
             }
@@ -525,7 +525,7 @@
             let c = document.getElementById('coupon').value.trim().toUpperCase();
             if(c === 'WELCOME10') {
                 disc = 0.10;
-                alert('Coupon WELCOME10 applied (10% Off)!');
+                alert('Coupon WELCOME10 applied successfully! 10% Off.');
                 updateCartUI();
             } else {
                 alert('Invalid Code. Try WELCOME10');
@@ -534,11 +534,11 @@
 
         function buyWA(id) {
             let p = products.find(x => x.id === id);
-            window.open(`https://wa.me/923716649231?text=${encodeURIComponent(`Hello Hika Yatesaf, I want to buy:\n*${p.name}*\nPrice: ${fmt(p.price)}\nSize: M`)}`, '_blank');
+            window.open(`https://wa.me/923716649231?text=${encodeURIComponent(`Hello Hika Yatesaf, I want to buy:\n*${p.name}*\nPrice: ${fmt(p.price)}\nSize: M\nStore: Luxe Boutique`)}`, '_blank');
         }
 
         function orderWA() {
-            if(cart.length === 0) { alert('Cart is empty'); return; }
+            if(cart.length === 0) { alert('Your cart is empty.'); return; }
             let sub = cart.reduce((s, i) => s + (i.price * i.qty), 0);
             let tot = sub - (sub * disc);
             let msg = `Hello Hika Yatesaf, new order from Luxe Boutique:\n\n` + cart.map(i => `- ${i.name} (x${i.qty}) - ${fmt(i.price * i.qty)}`).join('\n') + `\n\n*Total: ${fmt(tot)}*`;
@@ -546,7 +546,7 @@
         }
 
         function openCheckout() {
-            if(cart.length === 0) { alert('Cart is empty'); return; }
+            if(cart.length === 0) { alert('Your cart is empty.'); return; }
             toggleCart();
             document.getElementById('checkoutModal').style.display = 'flex';
         }
@@ -556,7 +556,7 @@
             let phone = document.getElementById('cPhone').value.trim();
             let addr = document.getElementById('cAddress').value.trim();
             let city = document.getElementById('cCity').value.trim();
-            if(!name || !phone || !addr || !city) { alert('Please fill all required fields.'); return; }
+            if(!name || !phone || !addr || !city) { alert('Please fill in all required fields.'); return; }
 
             let id = 'LUXE-' + Math.floor(1000 + Math.random() * 9000);
             let sub = cart.reduce((s, i) => s + (i.price * i.qty), 0);
@@ -566,7 +566,7 @@
 
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('succId').textContent = `Order ID: ${id}`;
-            document.getElementById('succSum').innerHTML = `Thank you, ${name}! Your order for ${city} has been placed.<br>Total: <b>${tot}</b>`;
+            document.getElementById('succSum').innerHTML = `Thank you, ${name}! Your order for ${city} has been placed successfully.<br>Total: <b>${tot}</b>.`;
             document.getElementById('successModal').style.display = 'flex';
         }
 
@@ -577,14 +577,17 @@
 
         function sendSuccEmail() {
             if(!lastOrd) return;
-            window.location.href = `mailto:hikayatesafaofficia        function sendSuccEmail() {
-            if(!lastOrd) return;
             window.location.href = `mailto:hikayatesafaofficial1@gmail.com?subject=New Order ${lastOrd.id}&body=${encodeURIComponent(`Order ID: ${lastOrd.id}\nName: ${lastOrd.name}\nPhone: ${lastOrd.phone}\nAddress: ${lastOrd.addr}, ${lastOrd.city}\nItems: ${lastOrd.list}\nTotal: ${lastOrd.tot}`)}`;
         }
 
         function toggleChat() {
             let b = document.getElementById('chatBox');
             b.style.display = b.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function quickAsk(t) {
+            document.getElementById('chatIn').value = t;
+            sendChat();
         }
 
         function sendChat() {
@@ -602,17 +605,19 @@
         function appendMsg(t, s) {
             let m = document.getElementById('chatMsgs');
             let d = document.createElement('div');
-            d.className = `c-msg ${s}`;
+            d.style.cssText = s === 'bot' 
+                ? 'background:#fff; border:1px solid var(--border); padding:8px 10px; border-radius:6px; align-self:flex-start; max-width:85%;'
+                : 'background:var(--black); color:#fff; padding:8px 10px; border-radius:6px; align-self:flex-end; max-width:85%;';
             d.textContent = t;
             m.appendChild(d);
             m.scrollTop = m.scrollHeight;
         }
 
         function getBotAns(q) {
-            if(q.includes('price') || q.includes('cost') || q.includes('discount')) return "Products range from $25 to $139. Use code WELCOME10 for 10% off!";
-            if(q.includes('size') || q.includes('fit')) return "We offer international sizing from XS to XXL (US/UK/Dubai standards).";
-            if(q.includes('ship') || q.includes('deliver')) return "Express shipping available for USA ($5.99), UK (£4.99), and Dubai (AED 20). Free shipping on qualifying orders!";
-            if(q.includes('return') || q.includes('refund')) return "We offer a 30-day easy return policy for unworn items.";
+            if(q.includes('price') || q.includes('cost') || q.includes('discount')) return "Our luxury apparel ranges from $25 to $139. Use code WELCOME10 for 10% off!";
+            if(q.includes('size') || q.includes('fit')) return "We offer international sizing from XS to XXL (Standard US/UK/Dubai fits).";
+            if(q.includes('ship') || q.includes('deliver')) return "Express shipping to USA ($5.99), UK (£4.99), and Dubai (AED 20). Free shipping on qualifying orders!";
+            if(q.includes('return') || q.includes('refund')) return "We offer a 30-day easy return policy for unworn items in original packaging.";
             if(q.includes('human') || q.includes('whatsapp') || q.includes('hika')) return "Contact founder Hika Yatesaf directly on WhatsApp at +92 371 6649231 or email hikayatesafaofficial1@gmail.com.";
             return "We feature 24 luxury pieces across Dresses, Kurtis, Abayas, Hijabs, and Co-Ord Sets. Feel free to ask about pricing, shipping, or sizing!";
         }
